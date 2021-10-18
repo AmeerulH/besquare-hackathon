@@ -1,0 +1,20 @@
+.grid-box {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.characters-header {
+  padding: 3vh;
+  font-size: 5rem;
+}
+
+.filter {
+  padding: 3vh 0;
+}
+
+.scale:hover {
+  transform: scale(1.2, 1.2);
+  z-index: 1;
+}
