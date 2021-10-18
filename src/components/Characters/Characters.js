@@ -1,7 +1,7 @@
 import React from "react";
 
 const Characters = () => {
-  return <div></div>;
+  return <div>Characters</div>;
 };
 
 export default Characters;

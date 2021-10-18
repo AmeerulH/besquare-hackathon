@@ -25,8 +25,6 @@ import axios from "axios";
 
 export const CharacterDetails = () => {
   const accessToken = "5144655025549998";
-  let charArray = [];
-  let id = 1;
   const url = `https://akabab.github.io/superhero-api/api/all.json`;
   const [characters, setCharacters] = useState([]);
 
@@ -37,14 +35,12 @@ export const CharacterDetails = () => {
 
     if (res && res.data) {
       setCharacters(res.data);
-      console.log(res.data);
     }
   };
 
   useEffect(() => {
     getCharacters();
-    console.log(characters);
-  }, [url]);
+  }, []);
 
   return characters;
 };
