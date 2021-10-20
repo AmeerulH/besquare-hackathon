@@ -21,6 +21,11 @@ function Characters() {
   const [array, setArray] = useState(CharacterDetails());
   var overall;
 
+  const [alignment, setAlignment] = useState("");
+  useEffect(() => {
+    setAlignment(alignment);
+  }, [alignment]);
+
   useEffect(() => {
     setArray(array);
   }, [array]);
@@ -31,7 +36,7 @@ function Characters() {
     setSortType(sortType);
   };
   */
-
+  /*
   function sortAlign(alignment) {
     const tempArray = [];
     for (let i = 0; i < charArray.length; i++) {
@@ -41,7 +46,7 @@ function Characters() {
     }
     setArray(tempArray);
   }
-
+*/
   //Name sorting function
   function ascending(obj) {
     obj.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
@@ -68,7 +73,7 @@ function Characters() {
     // }
 
     if (sort === "low") {
-      array.sort(function (a, b) {
+      charArray.sort(function (a, b) {
         return (
           a.powerstats.intelligence +
           a.powerstats.strength +
@@ -87,7 +92,7 @@ function Characters() {
     }
 
     if (sort === "high") {
-      array.sort(function (a, b) {
+      charArray.sort(function (a, b) {
         return (
           b.powerstats.intelligence +
           b.powerstats.strength +
@@ -143,12 +148,15 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1" onClick={() => ascending(array)}>
+              <Dropdown.Item
+                href="#/action-1"
+                onClick={() => ascending(charArray)}
+              >
                 A - Z
               </Dropdown.Item>
               <Dropdown.Item
                 href="#/action-2"
-                onClick={() => descending(array)}
+                onClick={() => descending(charArray)}
               >
                 Z - A
               </Dropdown.Item>
@@ -164,16 +172,18 @@ function Characters() {
             <Dropdown.Menu className="dropdown">
               <Dropdown.Item
                 href="#/action-1"
-                onClick={() => sortAlign("good")}
+                onClick={() => setAlignment("good")}
               >
                 GOOD
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-2" onClick={() => sortAlign("bad")}>
+              <Dropdown.Item
+                href="#/action-2" /*onClick={() => sortAlign("bad")}*/
+              >
                 EVIL
               </Dropdown.Item>
               <Dropdown.Item
                 href="#/action-3"
-                onClick={() => sortAlign("neutral")}
+                /*onClick={() => sortAlign("neutral")}*/
               >
                 NEUTRAL
               </Dropdown.Item>
@@ -210,12 +220,16 @@ function Characters() {
       </div>
       <div></div>
       <div className="grid-box">
-        {array
+        {charArray
           .filter((renderCard) => {
             if (searchHero == "") {
               return renderCard;
             } else if (
               renderCard.name.toLowerCase().includes(searchHero.toLowerCase())
+            ) {
+              return renderCard;
+            } else if (
+              renderCard.biography.alignment.includes(setAlignment("good"))
             ) {
               return renderCard;
             }

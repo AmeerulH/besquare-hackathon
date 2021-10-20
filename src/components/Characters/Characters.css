@@ -1,6 +1,6 @@
 .grid-box {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto;
   align-items: center;
   justify-content: center;
 }
@@ -14,7 +14,7 @@
   color: white;
   background-color: rgb(55, 57, 68);
   padding: 1.5vh 1vw;
-  margin: 3vh 16.5vw;
+  margin: 3vh 18.5vw;
   border-radius: 5px;
   border-style: groove;
   display: flex;
