@@ -4,7 +4,6 @@ import "./Characters.css";
 import { useHistory } from "react-router-dom";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Characters() {
@@ -110,7 +109,7 @@ function Characters() {
   }
 
   function getCharacterDetails(character) {
-    history.push(`/character/${character.id}`, character);
+    history.push(`/Character/${character.id}`, { state: { character } });
     console.log(character);
   }
 

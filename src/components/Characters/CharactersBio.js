@@ -6,7 +6,9 @@ import { Image } from "react-bootstrap";
 
 import "./Characters.css";
 
-const CharactersBio = () => {
+const CharactersBio = (props) => {
+  const character = props.location.state.state.character;
+  console.log(character);
   const charBio = {
     response: "success",
     id: "70",

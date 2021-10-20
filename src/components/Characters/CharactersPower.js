@@ -12,15 +12,17 @@ import {
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const CharactersPower = () => {
-  const percentage = 66;
+const CharactersPower = (props) => {
+  const character = props.location.state.state.character;
+  console.log(character);
+
   const powerstats = {
-    intelligence: "81",
-    strength: "40",
-    speed: "29",
-    durability: "55",
-    power: "63",
-    combat: "90",
+    Combat: character.powerstats.combat,
+    Durability: character.powerstats.durability,
+    Intelligence: character.powerstats.intelligence,
+    Power: character.powerstats.power,
+    Speed: character.powerstats.speed,
+    Strength: character.powerstats.strength,
   };
   return (
     <div className="charactersPower">

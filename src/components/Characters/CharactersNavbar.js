@@ -11,27 +11,38 @@ import {
 import CharactersPower from "./CharactersPower";
 import CharactersBio from "./CharactersBio";
 
-const CharactersNavbar = () => {
+const CharactersNavbar = (props) => {
+  const character = props.c;
+  console.log(character);
+
   return (
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
           <Nav className="charactersNavbar">
-            <Nav.Link as={Link} to="/CharactersPower">
+            <Nav.Link as={Link} to="/Character">
               Stats
             </Nav.Link>
-            <Nav.Link as={Link} to="/CharactersBio">
+            <Nav.Link as={Link} to="/CharacterBio">
               Bio
             </Nav.Link>
-            <Nav.Link as={Link} to="/CharactersConnections">
+            <Nav.Link as={Link} to="/Character">
               Connections
             </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
       <Switch>
-        <Route path="/CharactersPower" component={CharactersPower}></Route>
-        <Route path="/CharactersBio" component={CharactersBio}></Route>
+        <Route
+          c={character}
+          path="/Character"
+          component={CharactersPower}
+        ></Route>
+        <Route
+          c={character}
+          path="/CharacterBio"
+          component={CharactersBio}
+        ></Route>
       </Switch>
     </>
   );
