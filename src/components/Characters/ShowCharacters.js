@@ -3,15 +3,16 @@ import React from "react";
 import CharactersMainInfo from "./CharactersMainInfo";
 import CharactersNavbar from "./CharactersNavbar";
 import CharactersPower from "./CharactersPower";
+import "./Characters.css";
+import CharactersBio from "./CharactersBio";
 
-const CharacterDetails = () => {
+const ShowCharacters = (props) => {
   return (
     <div>
       <CharactersMainInfo />
       <CharactersNavbar />
-      <CharactersPower />
     </div>
   );
 };
 
-export default CharacterDetails;
+export default ShowCharacters;

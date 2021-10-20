@@ -6,6 +6,7 @@ import CharactersPower from "./components/Characters/CharactersPower";
 import Navigation from "./components/Home/Navigation";
 import { CharacterDetails } from "./service/CharacterDetails";
 import { useState, useEffect } from "react";
+import ShowCharacters from "./components/Characters/ShowCharacters";
 
 function App() {
   const charactersArray = CharacterDetails();
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Navigation></Navigation>
-      <Characters />
+      <ShowCharacters />
     </div>
   );
 }

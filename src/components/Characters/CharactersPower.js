@@ -22,9 +22,6 @@ const CharactersPower = () => {
     power: "63",
     combat: "90",
   };
-
-  console.log(Object.keys(powerstats));
-  console.log(Object.values(powerstats));
   return (
     <div className="charactersPower">
       <Container className="powerInfo">
