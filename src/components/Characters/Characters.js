@@ -13,33 +13,19 @@ function Characters() {
 
   //The state for the search function
   const [searchHero, setSearchHero] = useState("");
-  //The state for the name sort function
-  /*
-  const [sortType, setSortType] = useState("asc");
-  */
 
-  const [array, setArray] = useState(CharacterDetails());
-  var overall;
+  //Changes the view on character array change (filter)
+  useEffect(() => {}, [charArray]);
 
-  useEffect(() => {
-    setArray(array);
-  }, [array]);
-
-  //The function for the click event to change the state of sort type for name sorting (initial method)
-  /*
-  const setSort = (sortType) => {
-    setSortType(sortType);
-  };
-  */
-
+  // function to filter their alignment
   function sortAlign(alignment) {
-    const tempArray = [];
-    for (let i = 0; i < charArray.length; i++) {
-      if (charArray[i].biography.alignment === alignment) {
-        tempArray.push(charArray[i]);
-      }
-    }
-    setArray(tempArray);
+    console.log(
+      charArray.sort(
+        (a, b) =>
+          b.biography.alignment.indexOf(alignment) -
+          a.biography.alignment.indexOf(alignment)
+      )
+    );
   }
 
   //Name sorting function
@@ -52,23 +38,10 @@ function Characters() {
     obj.sort((a, b) => (b.name > a.name ? 1 : a.name > b.name ? -1 : 0));
   }
 
+  //sort by overall power
   function sortPower(sort) {
-    let tempArray = array;
-    // for (let i = 0; i < 1; i++) {
-    //   let intelligence = charArray[i].powerstats.intelligence;
-    //   let strength = charArray[i].powerstats.strength;
-    //   let speed = charArray[i].powerstats.speed;
-    //   let durability = charArray[i].powerstats.durability;
-    //   let power = charArray[i].powerstats.power;
-    //   let combat = charArray[i].powerstats.combat;
-    //   overall = intelligence + strength + speed + durability + power + combat;
-    //   // const over = hero => array.values(hero).reduce((a.powerstats, b.powerstats) => a.powerstats + b.powerstats);
-    //   tempArray["overall"] = overall;
-    //   console.log(tempArray[i]);
-    // }
-
     if (sort === "low") {
-      array.sort(function (a, b) {
+      charArray.sort(function (a, b) {
         return (
           a.powerstats.intelligence +
           a.powerstats.strength +
@@ -87,7 +60,7 @@ function Characters() {
     }
 
     if (sort === "high") {
-      array.sort(function (a, b) {
+      charArray.sort(function (a, b) {
         return (
           b.powerstats.intelligence +
           b.powerstats.strength +
@@ -104,10 +77,9 @@ function Characters() {
         );
       });
     }
-
-    console.log(array);
   }
 
+  // sends character information on card click to the next page
   function getCharacterDetails(character) {
     history.push(`/character/${character.id}`, character);
     console.log(character);
@@ -143,12 +115,15 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1" onClick={() => ascending(array)}>
+              <Dropdown.Item
+                href="#/action-1"
+                onClick={() => ascending(charArray)}
+              >
                 A - Z
               </Dropdown.Item>
               <Dropdown.Item
                 href="#/action-2"
-                onClick={() => descending(array)}
+                onClick={() => descending(charArray)}
               >
                 Z - A
               </Dropdown.Item>
@@ -210,7 +185,7 @@ function Characters() {
       </div>
       <div></div>
       <div className="grid-box">
-        {array
+        {charArray
           .filter((renderCard) => {
             if (searchHero == "") {
               return renderCard;
