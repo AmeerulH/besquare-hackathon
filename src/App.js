@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div className="App">
-      <Characters />
       <Navigation></Navigation>
+      <Characters />
     </div>
   );
 }

@@ -39,28 +39,15 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-}
-
-.charactersPowerInfo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Roboto Condensed", sans-serif;
   margin-top: 4rem;
 }
 
 .powerInfo {
-  width: 80%;
-}
-
-.powerName {
-  font-size: 24px;
-}
-
-.powerDescription {
-  font-size: 24px;
+  width: auto;
 }
 
 .charactersNavbar {
   justify-content: center;
+  align-content: center;
 }
