@@ -2,29 +2,44 @@ import React from "react";
 import { Card, Dropdown } from "react-bootstrap";
 import "./Characters.css";
 import { CharacterDetails } from "../../service/CharacterDetails";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Characters() {
   //characters API, place where the data is called from
-  const charArray = CharacterDetails();
+  let charArray = CharacterDetails();
 
   //The state for the search function
   const [searchHero, setSearchHero] = useState("");
-
-  //Display good heroes
-  const [sortAlignment, setSortAlignment] = useState("");
   //The state for the name sort function
   const [sortType, setSortType] = useState("asc");
+  const [array, setArray] = useState(CharacterDetails());
+
+  useEffect(() => {
+    setArray(array);
+    console.log(array);
+  }, [array]);
+
   //The function for the click event to change the state of sort type
   const setSort = (sortType) => {
     setSortType(sortType);
   };
+
   //The process to sort the names in ascending order and descending order
   const sorted = charArray.sort((a, b) => {
     const isReversed = sortType === "asc" ? 1 : -1;
     return isReversed * a.name.localeCompare(b.name);
   });
+
+  function sortAlign(alignment) {
+    const tempArray = [];
+    for (let i = 0; i < charArray.length; i++) {
+      if (charArray[i].biography.alignment === alignment) {
+        tempArray.push(charArray[i]);
+      }
+    }
+    setArray(tempArray);
+  }
 
   //The information displayed on each card
   const renderCard = (card, index) => {
@@ -71,8 +86,21 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1">GOOD</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">EVIL</Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-1"
+                onClick={() => sortAlign("good")}
+              >
+                GOOD
+              </Dropdown.Item>
+              <Dropdown.Item href="#/action-2" onClick={() => sortAlign("bad")}>
+                EVIL
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-3"
+                onClick={() => sortAlign("neutral")}
+              >
+                NEUTRAL
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </span>
@@ -99,7 +127,7 @@ function Characters() {
       </div>
       <div></div>
       <div className="grid-box">
-        {charArray
+        {array
           .filter((renderCard) => {
             if (searchHero == "") {
               return renderCard;
