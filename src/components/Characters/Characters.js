@@ -2,7 +2,8 @@ import React from "react";
 import { Card, Dropdown } from "react-bootstrap";
 import "./Characters.css";
 import { CharacterDetails } from "../../service/CharacterDetails";
-import { useState, useEffect, useHistory } from "react";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Characters() {
