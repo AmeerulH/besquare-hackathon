@@ -1,7 +1,7 @@
 import React from "react";
 
 const Versus = () => {
-  return <div>hey</div>;
+  return <div>Versus</div>;
 };
 
 export default Versus;

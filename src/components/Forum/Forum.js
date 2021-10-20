@@ -1,7 +1,7 @@
 import React from "react";
 
 const Forum = () => {
-  return <div>hi</div>;
+  return <div>Forum</div>;
 };
 
 export default Forum;
