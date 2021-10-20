@@ -11,34 +11,33 @@ function Characters() {
 
   //The state for the search function
   const [searchHero, setSearchHero] = useState("");
-<<<<<<< HEAD
-
-  //Display good heroes
-
-=======
->>>>>>> c9a49a6560d2025e1c23a560e858c703d6ada057
   //The state for the name sort function
+  /*
   const [sortType, setSortType] = useState("asc");
+  */
+
   const [array, setArray] = useState(CharacterDetails());
 
   useEffect(() => {
     setArray(array);
-    console.log(array);
   }, [array]);
 
-  //The function for the click event to change the state of sort type
+  //The function for the click event to change the state of sort type for name sorting (initial method)
+  /*
   const setSort = (sortType) => {
     setSortType(sortType);
   };
+  */
 
   //The process to sort the names in ascending order and descending order
+  /*
   const sortedName = charArray.sort((a, b) => {
     const isReversed = sortType === "asc" ? 1 : -1;
     return isReversed * a.name.localeCompare(b.name);
   });
+  */
 
-<<<<<<< HEAD
-=======
+  //Alignment sorting function
   function sortAlign(alignment) {
     const tempArray = [];
     for (let i = 0; i < charArray.length; i++) {
@@ -49,8 +48,17 @@ function Characters() {
     setArray(tempArray);
   }
 
+  //Name sorting function
+  function ascending(obj) {
+    obj.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
+  }
+
+  //Name sorting function
+  function descending(obj) {
+    obj.sort((a, b) => (b.name > a.name ? 1 : a.name > b.name ? -1 : 0));
+  }
+
   //The information displayed on each card
->>>>>>> c9a49a6560d2025e1c23a560e858c703d6ada057
   const renderCard = (card, index) => {
     return (
       <Card
@@ -79,10 +87,13 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1" onClick={() => setSort("asc")}>
+              <Dropdown.Item href="#/action-1" onClick={() => ascending(array)}>
                 A - Z
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-2" onClick={() => setSort("desc")}>
+              <Dropdown.Item
+                href="#/action-2"
+                onClick={() => descending(array)}
+              >
                 Z - A
               </Dropdown.Item>
             </Dropdown.Menu>
