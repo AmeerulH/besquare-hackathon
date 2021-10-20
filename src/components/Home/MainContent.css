@@ -1,0 +1,10 @@
+.maincontent {
+  background-color: #184e77;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  color: white;
+}

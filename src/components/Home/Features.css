@@ -1,0 +1,72 @@
+.features {
+  background-color: #184e77;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.header1 {
+  width: auto;
+  height: auto;
+  color: #34a0a4;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lists {
+  color: #52b69a;
+}
+.lists:hover {
+  color: #184e77;
+}
+
+.vsCard {
+  color: #52b69a;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 10px;
+  border-radius: 10px;
+}
+
+.forumCard {
+  color: #52b69a;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 10px;
+  border-radius: 10px;
+}
+.charCard {
+  color: #52b69a;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 10px;
+  border-radius: 10px;
+}
+.charCardTitle {
+  color: #184e77;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.vsCardTitle {
+  color: #184e77;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.charCard:hover {
+  color: #184e77;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  font-size: 36px;
+}
