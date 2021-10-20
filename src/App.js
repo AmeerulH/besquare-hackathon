@@ -1,5 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Characters from "./components/Characters/Characters";
+import Home from "./components/Home/Home";
 import Navigation from "./components/Home/Navigation";
 import { CharacterDetails } from "./service/CharacterDetails";
 import { useState, useEffect } from "react";
