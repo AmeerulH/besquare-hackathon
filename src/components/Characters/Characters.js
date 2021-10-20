@@ -2,12 +2,13 @@ import React from "react";
 import { Card, Dropdown } from "react-bootstrap";
 import "./Characters.css";
 import { CharacterDetails } from "../../service/CharacterDetails";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useHistory } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Characters() {
   //characters API, place where the data is called from
   let charArray = CharacterDetails();
+  let history = useHistory();
 
   //The state for the search function
   const [searchHero, setSearchHero] = useState("");
@@ -17,7 +18,6 @@ function Characters() {
 
   useEffect(() => {
     setArray(array);
-    console.log(array);
   }, [array]);
 
   //The function for the click event to change the state of sort type
@@ -25,11 +25,11 @@ function Characters() {
     setSortType(sortType);
   };
 
-  //The process to sort the names in ascending order and descending order
-  const sorted = charArray.sort((a, b) => {
-    const isReversed = sortType === "asc" ? 1 : -1;
-    return isReversed * a.name.localeCompare(b.name);
-  });
+  //   //The process to sort the names in ascending order and descending order
+  //   const sorted = charArray.sort((a, b) => {
+  //     const isReversed = sortType === "asc" ? 1 : -1;
+  //     return isReversed * a.name.localeCompare(b.name);
+  //   });
 
   function sortAlign(alignment) {
     const tempArray = [];
@@ -41,6 +41,26 @@ function Characters() {
     setArray(tempArray);
   }
 
+  function sortPower() {
+    for (let i = 0; i < 1; i++) {
+      let intelligence = charArray[i].powerstats.intelligence;
+      let strength = charArray[i].powerstats.strength;
+      let speed = charArray[i].powerstats.speed;
+      let durability = charArray[i].powerstats.durability;
+      let power = charArray[i].powerstats.power;
+      let combat = charArray[i].powerstats.combat;
+      let overall =
+        intelligence + strength + speed + durability + power + combat;
+      //   charArray.push({ overall: overall });
+    }
+    console.log(charArray[0]);
+  }
+
+  function getCharacterDetails(character) {
+    history.push(`/character/${character.id}`, character);
+    console.log(character);
+  }
+
   //The information displayed on each card
   const renderCard = (card, index) => {
     return (
@@ -49,6 +69,7 @@ function Characters() {
         border="dark"
         style={{ width: "10rem" }}
         key={index}
+        onClick={() => getCharacterDetails(card)}
       >
         <Card.Img src={card.images.lg} />
         <Card.ImgOverlay className="selection-shadow">
@@ -111,7 +132,9 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1">Lowest - Highest</Dropdown.Item>
+              <Dropdown.Item href="#/action-1" onClick={() => sortPower()}>
+                Lowest - Highest
+              </Dropdown.Item>
               <Dropdown.Item href="#/action-2">Highest - Lowest</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
