@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 
 function App() {
   const charactersArray = CharacterDetails();
-  console.log(charactersArray);
 
   return (
     <div className="App">
