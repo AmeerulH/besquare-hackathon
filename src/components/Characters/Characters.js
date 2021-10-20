@@ -16,6 +16,7 @@ function Characters() {
   //The state for the name sort function
   const [sortType, setSortType] = useState("asc");
   const [array, setArray] = useState(CharacterDetails());
+  var overall;
 
   useEffect(() => {
     setArray(array);
@@ -25,12 +26,6 @@ function Characters() {
   const setSort = (sortType) => {
     setSortType(sortType);
   };
-
-  //   //The process to sort the names in ascending order and descending order
-  //   const sorted = charArray.sort((a, b) => {
-  //     const isReversed = sortType === "asc" ? 1 : -1;
-  //     return isReversed * a.name.localeCompare(b.name);
-  //   });
 
   function sortAlign(alignment) {
     const tempArray = [];
@@ -42,19 +37,60 @@ function Characters() {
     setArray(tempArray);
   }
 
-  function sortPower() {
-    for (let i = 0; i < 1; i++) {
-      let intelligence = charArray[i].powerstats.intelligence;
-      let strength = charArray[i].powerstats.strength;
-      let speed = charArray[i].powerstats.speed;
-      let durability = charArray[i].powerstats.durability;
-      let power = charArray[i].powerstats.power;
-      let combat = charArray[i].powerstats.combat;
-      let overall =
-        intelligence + strength + speed + durability + power + combat;
-      //   charArray.push({ overall: overall });
+  function sortPower(sort) {
+    let tempArray = array;
+    // for (let i = 0; i < 1; i++) {
+    //   let intelligence = charArray[i].powerstats.intelligence;
+    //   let strength = charArray[i].powerstats.strength;
+    //   let speed = charArray[i].powerstats.speed;
+    //   let durability = charArray[i].powerstats.durability;
+    //   let power = charArray[i].powerstats.power;
+    //   let combat = charArray[i].powerstats.combat;
+    //   overall = intelligence + strength + speed + durability + power + combat;
+    //   // const over = hero => array.values(hero).reduce((a.powerstats, b.powerstats) => a.powerstats + b.powerstats);
+    //   tempArray["overall"] = overall;
+    //   console.log(tempArray[i]);
+    // }
+
+    if (sort === "low") {
+      array.sort(function (a, b) {
+        return (
+          a.powerstats.intelligence +
+          a.powerstats.strength +
+          a.powerstats.speed +
+          a.powerstats.durability +
+          a.powerstats.power +
+          a.powerstats.combat -
+          (b.powerstats.intelligence +
+            b.powerstats.strength +
+            b.powerstats.speed +
+            b.powerstats.durability +
+            b.powerstats.power +
+            b.powerstats.combat)
+        );
+      });
     }
-    console.log(charArray[0]);
+
+    if (sort === "high") {
+      array.sort(function (a, b) {
+        return (
+          b.powerstats.intelligence +
+          b.powerstats.strength +
+          b.powerstats.speed +
+          b.powerstats.durability +
+          b.powerstats.power +
+          b.powerstats.combat -
+          (a.powerstats.intelligence +
+            a.powerstats.strength +
+            a.powerstats.speed +
+            a.powerstats.durability +
+            a.powerstats.power +
+            a.powerstats.combat)
+        );
+      });
+    }
+
+    console.log(array);
   }
 
   function getCharacterDetails(character) {
@@ -133,10 +169,15 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1" onClick={() => sortPower()}>
+              <Dropdown.Item href="#/action-1" onClick={() => sortPower("low")}>
                 Lowest - Highest
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Highest - Lowest</Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-2"
+                onClick={() => sortPower("high")}
+              >
+                Highest - Lowest
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </span>
