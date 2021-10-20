@@ -50,7 +50,8 @@ function Characters() {
   //Name sorting function
   function descending(obj) {
     obj.sort((a, b) => (b.name > a.name ? 1 : a.name > b.name ? -1 : 0));
-    
+  }
+
   function sortPower(sort) {
     let tempArray = array;
     // for (let i = 0; i < 1; i++) {
