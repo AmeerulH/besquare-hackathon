@@ -13,11 +13,8 @@ function Characters() {
 
   //The state for the search function
   const [searchHero, setSearchHero] = useState("");
-  //The state for the name sort function
-  /*
-  const [sortType, setSortType] = useState("asc");
-  */
 
+<<<<<<< HEAD
   const [array, setArray] = useState(CharacterDetails());
   var overall;
 
@@ -37,14 +34,20 @@ function Characters() {
   };
   */
   /*
+=======
+  //Changes the view on character array change (filter)
+  useEffect(() => {}, [charArray]);
+
+  // function to filter their alignment
+>>>>>>> be8f6fa1cd34213749474a783228e2ef40209c14
   function sortAlign(alignment) {
-    const tempArray = [];
-    for (let i = 0; i < charArray.length; i++) {
-      if (charArray[i].biography.alignment === alignment) {
-        tempArray.push(charArray[i]);
-      }
-    }
-    setArray(tempArray);
+    console.log(
+      charArray.sort(
+        (a, b) =>
+          b.biography.alignment.indexOf(alignment) -
+          a.biography.alignment.indexOf(alignment)
+      )
+    );
   }
 */
   //Name sorting function
@@ -57,21 +60,8 @@ function Characters() {
     obj.sort((a, b) => (b.name > a.name ? 1 : a.name > b.name ? -1 : 0));
   }
 
+  //sort by overall power
   function sortPower(sort) {
-    let tempArray = array;
-    // for (let i = 0; i < 1; i++) {
-    //   let intelligence = charArray[i].powerstats.intelligence;
-    //   let strength = charArray[i].powerstats.strength;
-    //   let speed = charArray[i].powerstats.speed;
-    //   let durability = charArray[i].powerstats.durability;
-    //   let power = charArray[i].powerstats.power;
-    //   let combat = charArray[i].powerstats.combat;
-    //   overall = intelligence + strength + speed + durability + power + combat;
-    //   // const over = hero => array.values(hero).reduce((a.powerstats, b.powerstats) => a.powerstats + b.powerstats);
-    //   tempArray["overall"] = overall;
-    //   console.log(tempArray[i]);
-    // }
-
     if (sort === "low") {
       charArray.sort(function (a, b) {
         return (
@@ -109,10 +99,9 @@ function Characters() {
         );
       });
     }
-
-    console.log(array);
   }
 
+  // sends character information on card click to the next page
   function getCharacterDetails(character) {
     history.push(`/character/${character.id}`, character);
     console.log(character);
