@@ -1,0 +1,36 @@
+.first-hero {
+  height: 300px;
+  width: 200px;
+  background-color: black;
+  border-radius: 0.6rem;
+}
+
+.second-hero {
+  height: 300px;
+  width: 200px;
+  background-color: red;
+  border-radius: 0.6rem;
+}
+
+.pick-hero {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 5% 10% 5%;
+}
+
+.wrapper-hero {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* #choose-hero {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 5% 10% 5%;
+} */
+
+.choose-hero {
+  border: 1px solid red;
+}
