@@ -3,11 +3,13 @@ import { Card, Dropdown } from "react-bootstrap";
 import "./Characters.css";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Characters() {
   //characters API, place where the data is called from
   let charArray = CharacterDetails();
+  let history = useHistory();
 
   //The state for the search function
   const [searchHero, setSearchHero] = useState("");
@@ -17,6 +19,7 @@ function Characters() {
   */
 
   const [array, setArray] = useState(CharacterDetails());
+  var overall;
 
   useEffect(() => {
     setArray(array);
@@ -29,15 +32,6 @@ function Characters() {
   };
   */
 
-  //The process to sort the names in ascending order and descending order
-  /*
-  const sortedName = charArray.sort((a, b) => {
-    const isReversed = sortType === "asc" ? 1 : -1;
-    return isReversed * a.name.localeCompare(b.name);
-  });
-  */
-
-  //Alignment sorting function
   function sortAlign(alignment) {
     const tempArray = [];
     for (let i = 0; i < charArray.length; i++) {
@@ -56,6 +50,66 @@ function Characters() {
   //Name sorting function
   function descending(obj) {
     obj.sort((a, b) => (b.name > a.name ? 1 : a.name > b.name ? -1 : 0));
+    
+  function sortPower(sort) {
+    let tempArray = array;
+    // for (let i = 0; i < 1; i++) {
+    //   let intelligence = charArray[i].powerstats.intelligence;
+    //   let strength = charArray[i].powerstats.strength;
+    //   let speed = charArray[i].powerstats.speed;
+    //   let durability = charArray[i].powerstats.durability;
+    //   let power = charArray[i].powerstats.power;
+    //   let combat = charArray[i].powerstats.combat;
+    //   overall = intelligence + strength + speed + durability + power + combat;
+    //   // const over = hero => array.values(hero).reduce((a.powerstats, b.powerstats) => a.powerstats + b.powerstats);
+    //   tempArray["overall"] = overall;
+    //   console.log(tempArray[i]);
+    // }
+
+    if (sort === "low") {
+      array.sort(function (a, b) {
+        return (
+          a.powerstats.intelligence +
+          a.powerstats.strength +
+          a.powerstats.speed +
+          a.powerstats.durability +
+          a.powerstats.power +
+          a.powerstats.combat -
+          (b.powerstats.intelligence +
+            b.powerstats.strength +
+            b.powerstats.speed +
+            b.powerstats.durability +
+            b.powerstats.power +
+            b.powerstats.combat)
+        );
+      });
+    }
+
+    if (sort === "high") {
+      array.sort(function (a, b) {
+        return (
+          b.powerstats.intelligence +
+          b.powerstats.strength +
+          b.powerstats.speed +
+          b.powerstats.durability +
+          b.powerstats.power +
+          b.powerstats.combat -
+          (a.powerstats.intelligence +
+            a.powerstats.strength +
+            a.powerstats.speed +
+            a.powerstats.durability +
+            a.powerstats.power +
+            a.powerstats.combat)
+        );
+      });
+    }
+
+    console.log(array);
+  }
+
+  function getCharacterDetails(character) {
+    history.push(`/character/${character.id}`, character);
+    console.log(character);
   }
 
   //The information displayed on each card
@@ -66,6 +120,7 @@ function Characters() {
         border="dark"
         style={{ width: "10rem" }}
         key={index}
+        onClick={() => getCharacterDetails(card)}
       >
         <Card.Img src={card.images.lg} />
         <Card.ImgOverlay className="selection-shadow">
@@ -131,8 +186,15 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1">Lowest - Highest</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Highest - Lowest</Dropdown.Item>
+              <Dropdown.Item href="#/action-1" onClick={() => sortPower("low")}>
+                Lowest - Highest
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-2"
+                onClick={() => sortPower("high")}
+              >
+                Highest - Lowest
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </span>
