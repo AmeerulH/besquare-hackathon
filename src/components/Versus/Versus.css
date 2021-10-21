@@ -87,43 +87,51 @@
 }
 
 .stats-left-hero1 {
-  height: 100px;
-  width: 100px;
-  font-size: 13px;
+  height: 120px;
+  width: 120px;
+  font-size: 0.8vw;
   padding: 100px 0 150px 0;
   color: white;
   border: none;
   background: none;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
 }
 
 .stats-left-hero2 {
-  height: 100px;
-  width: 100px;
-  font-size: 13px;
+  height: 120px;
+  width: 120px;
+  font-size: 0.8vw;
   padding: 100px 0 100px 0;
   color: white;
   border: none;
   background: none;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
 }
 
 .stats-right-hero1 {
-  height: 100px;
-  width: 100px;
-  font-size: 13px;
+  height: 120px;
+  width: 120px;
+  font-size: 0.8vw;
   padding: 100px 0 100px 0;
   color: white;
   border: none;
   background: none;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
 }
 
 .stats-right-hero2 {
-  height: 100px;
-  width: 100px;
-  font-size: 13px;
+  height: 120px;
+  width: 120px;
+  font-size: 0.8vw;
   padding: 100px 0 100px 0;
   color: white;
   border: none;
   background: none;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
 }
 
 .leftImageOverlay {
@@ -134,13 +142,17 @@
 }
 
 .player1Name {
-  background-color: black;
-  height: 30px;
+  font-size: 2vw;
+  color: black;
+  text-shadow: 0 0 10px white, 0 0 10px white;
+  font-family: "Bangers", cursive;
 }
 
 .player2Name {
-  background-color: black;
-  height: 30px;
+  font-size: 2vw;
+  color: black;
+  text-shadow: 0 0 10px white, 0 0 10px white;
+  font-family: "Bangers", cursive;
 }
 
 .rightImageOverlay {
@@ -157,12 +169,18 @@
 
 .overall-pos1 {
   padding-top: 20px;
+  font-size: 2vw;
   color: white;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
 }
 
 .overall-pos2 {
   padding-top: 20px;
+  font-size: 2vw;
   color: white;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
 }
 
 .background {
