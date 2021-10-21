@@ -95,7 +95,9 @@ function Versus() {
       >
         <Card.Img src={card.images.lg} />
         <Card.ImgOverlay className="selection-shadow">
-          <Card.Title className="character-names">{card.name}</Card.Title>
+          <Card.Title className="character-names-versus">
+            {card.name}
+          </Card.Title>
         </Card.ImgOverlay>
       </Card>
     );

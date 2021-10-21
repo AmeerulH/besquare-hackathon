@@ -20,11 +20,11 @@
   z-index: 1;
 }
 
-.hero-box:hover .character-names {
+.hero-box:hover .character-names-versus {
   display: block;
 }
 
-.character-names {
+.character-names-versus {
   display: none;
   color: white;
   font-size: 15px;
