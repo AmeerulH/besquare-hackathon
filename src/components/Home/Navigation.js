@@ -5,6 +5,7 @@ import Characters from "../Characters/Characters";
 import Versus from "../Versus/Versus";
 import Home from "./Home";
 import Forum from "../Forum/Forum";
+import ShowCharacters from "../Characters/ShowCharacters";
 
 const Navigation = () => {
   return (
@@ -38,6 +39,7 @@ const Navigation = () => {
         <Route path="/Characters" component={Characters}></Route>
         <Route path="/Versus" component={Versus}></Route>
         <Route path="/Forum" component={Forum}></Route>
+        <Route path="/Character" component={ShowCharacters}></Route>
       </Switch>
     </>
   );

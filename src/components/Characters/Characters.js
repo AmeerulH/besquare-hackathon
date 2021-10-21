@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Dropdown } from "react-bootstrap";
 import "./Characters.css";
+import { useHistory } from "react-router-dom";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Characters() {
@@ -79,7 +79,7 @@ function Characters() {
 
   // sends character information on card click to the next page
   function getCharacterDetails(character) {
-    history.push(`/character/${character.id}`, character);
+    history.push(`/Character/${character.id}`, { state: { character } });
     console.log(character);
   }
 
