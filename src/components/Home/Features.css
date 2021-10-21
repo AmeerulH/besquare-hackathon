@@ -16,11 +16,15 @@
   margin-bottom: 20vh;
 }
 
+.lists {
+  color: #1f2833;
+}
+
 .charCard {
   color: #1f2833;
-  height: 50vh;
-  display: grid;
-  place-items: center;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   box-shadow: 10px;
   border-radius: 10px;
@@ -31,19 +35,23 @@
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-size: 2rem;
 }
-.lists {
-  color: #1f2833;
-  display: grid;
-  place-items: center;
-}
-
 .vsCard {
   color: #1f2833;
-  height: 50vh;
-  display: grid;
-  place-items: center;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 10px;
+  border-radius: 10px;
+  border-color: #1f2833;
+}
+
+.forumCard {
+  color: #1f2833;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   box-shadow: 10px;
   border-radius: 10px;
@@ -55,35 +63,8 @@
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-size: 2rem;
 }
-.vsCardtext {
-  place-items: center;
-  color: #1f2833;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-}
-.forumCard {
-  display: grid;
-  place-items: center;
-  color: #1f2833;
-  height: 50vh;
-  text-decoration: none;
-  box-shadow: 10px;
-  border-radius: 10px;
-  border-color: #1f2833;
-}
-
 .forumCardTitle {
-  display: grid;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 2rem;
-  font-weight: 900;
-}
-.forumCardtext {
-  place-items: center;
   color: #1f2833;
   align-items: center;
   justify-content: center;
