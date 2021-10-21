@@ -20,6 +20,7 @@ export const CharacterDetails = () => {
     getCharacters();
   }, [url]);
 
+  console.log(characters);
   return characters;
 };
 
