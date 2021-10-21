@@ -19,12 +19,10 @@ function Characters() {
 
   // function to filter their alignment
   function sortAlign(alignment) {
-    console.log(
-      charArray.sort(
-        (a, b) =>
-          b.biography.alignment.indexOf(alignment) -
-          a.biography.alignment.indexOf(alignment)
-      )
+    charArray.sort(
+      (a, b) =>
+        b.biography.alignment.indexOf(alignment) -
+        a.biography.alignment.indexOf(alignment)
     );
   }
 
