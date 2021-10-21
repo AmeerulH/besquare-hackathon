@@ -19,7 +19,7 @@ const Features = () => {
           <div className="featureCards">
             <Card as={Link} to="/Characters" className="cardFeatures">
               <Card.Body>
-                <Card.Title className="charCardTitle">CHARACTERS</Card.Title>
+                <Card.Title className="CardTitle">CHARACTERS</Card.Title>
                 <ListGroup variant="flush">
                   <ListGroup.Item className="lists">Power</ListGroup.Item>
                   <ListGroup.Item className="lists">Description</ListGroup.Item>
@@ -29,19 +29,16 @@ const Features = () => {
             </Card>
             <Card as={Link} to="/Versus" className="cardFeatures">
               <Card.Body>
-                <Card.Title className="vsCardTitle">HEAD TO HEAD</Card.Title>
-                <Card.Text className="vsCardText">
-                  Choose between different <br /> heroes to compare the
-                  statistics
+                <Card.Title className="CardTitle">HEAD TO HEAD</Card.Title>
+                <Card.Text className="CardText">
+                  Choose between different heroes to compare the statistics
                 </Card.Text>
               </Card.Body>
             </Card>
             <Card as={Link} to="/Forum" className="cardFeatures">
               <Card.Body>
-                <Card.Title className="forumCardTitle">FORUM</Card.Title>
-                <Card.Text className="forumCardText">
-                  Community Discussion
-                </Card.Text>
+                <Card.Title className="CardTitle">FORUM</Card.Title>
+                <Card.Text className="CardText">Community Discussion</Card.Text>
               </Card.Body>
             </Card>
           </div>
