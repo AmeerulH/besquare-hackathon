@@ -1,0 +1,89 @@
+.features {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.header1 {
+  width: auto;
+  height: auto;
+  color: #66fcf1;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20vh;
+}
+
+.lists {
+  color: #1f2833;
+}
+
+.charCard {
+  color: #1f2833;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 10px;
+  border-radius: 10px;
+  border-color: #1f2833;
+}
+.charCardTitle {
+  color: #1f2833;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+.vsCard {
+  color: #1f2833;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 10px;
+  border-radius: 10px;
+  border-color: #1f2833;
+}
+
+.forumCard {
+  color: #1f2833;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 10px;
+  border-radius: 10px;
+  border-color: #1f2833;
+}
+
+.vsCardTitle {
+  color: #1f2833;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+.forumCardTitle {
+  color: #1f2833;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.charCard:hover {
+  color: #66fcf1;
+}
+.vsCard:hover {
+  color: #66fcf1;
+}
+.forumCard:hover {
+  color: #66fcf1;
+}
+.lists:hover {
+  color: #66fcf1;
+}
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  font-size: 36px;
+} */
