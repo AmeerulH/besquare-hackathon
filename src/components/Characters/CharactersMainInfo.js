@@ -64,9 +64,8 @@ const CharactersMainInfo = (props) => {
                   <Image
                     classname="heroImage"
                     src={character.images.lg}
-                    width="auto "
-                    height="500px"
-                  ></Image>
+                    rounded
+                  />
                 </Col>
               </Row>
             </Container>
