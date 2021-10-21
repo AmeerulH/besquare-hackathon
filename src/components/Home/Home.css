@@ -42,7 +42,7 @@
   text-shadow: 0 0 2px #66fcf1, 0 0 2px #66fcf1;
 }
 
-.character-names {
+.character-names-home {
   display: flex;
   justify-content: flex-start;
   background-color: black;

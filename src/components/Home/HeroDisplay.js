@@ -21,7 +21,7 @@ const HeroDisplay = () => {
       <Card className="heroCard" key={index}>
         <Card.Img style={{ borderRadius: "0.4rem" }} src={card.images.lg} />
         <Card.ImgOverlay>
-          <Card.Title className="character-names">
+          <Card.Title className="character-names-home">
             {card.name}
             {/* {card.biography.fullName} */}
           </Card.Title>
