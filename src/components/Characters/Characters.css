@@ -1,0 +1,124 @@
+.grid-box {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.characters-header {
+  padding: 3vh;
+  font-size: 5rem;
+}
+
+.filter {
+  color: white;
+  background-color: rgb(55, 57, 68);
+  padding: 1.5vh 1vw;
+  margin: 3vh 16.5vw;
+  border-radius: 5px;
+  border-style: groove;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.character-names {
+  display: none;
+  color: white;
+}
+
+.scale:hover {
+  transform: scale(1.2, 1.2);
+  transition-duration: 0.7s;
+  z-index: 1;
+}
+
+.scale:hover .character-names {
+  display: block;
+}
+
+.selection-shadow:hover {
+  backdrop-filter: opacity(100%);
+  box-shadow: 0px 100px 200px black inset;
+}
+
+.filter input {
+  width: 200px;
+}
+
+.filter-word {
+  letter-spacing: 3px;
+}
+
+.dropdown {
+  font-size: small;
+}
+
+.box {
+  margin: 5px 5px;
+}
+
+.charactersMainInfo {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 7px solid black;
+  border-bottom: 7px solid black;
+}
+
+.charactersInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.heroInfo {
+  margin-top: 5rem;
+  margin-left: 200px;
+  color: black;
+}
+
+.heroName {
+  font-size: 35px;
+  font-weight: 550;
+}
+
+.heroDescription {
+  margin-top: 2rem;
+  font-size: 24px;
+}
+.heroImage {
+}
+
+.charactersMainInfo {
+}
+.charactersPower {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Condensed", sans-serif;
+  margin-top: 4rem;
+}
+
+.powerInfo {
+  margin-top: 4rem;
+  width: auto;
+}
+
+.charactersNavbar {
+  justify-content: center;
+  align-content: center;
+}
+
+.bioContainer {
+  backdrop-filter: blur(5px);
+  margin-top: 2rem;
+}
+.bioInformation {
+  font-family: "Roboto Condensed", sans-serif;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  font-size: 30px;
+}
