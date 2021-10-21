@@ -17,6 +17,7 @@
   margin: 2vh 10.5vw;
   border-radius: 10px;
   border-style: groove;
+  border-width: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,6 +48,7 @@
 }
 
 .filter-word {
+  font-weight: bold;
   letter-spacing: 3px;
 }
 
@@ -61,7 +63,7 @@
 }
 
 .background-image {
-  background-image: url(../../superhero-pattern-1.jpg);
+  background-image: url(../../dark-pattern-1.jpg);
   width: 100%;
   height: 100%;
 }
