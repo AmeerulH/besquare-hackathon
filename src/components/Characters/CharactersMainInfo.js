@@ -3,11 +3,8 @@ import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Image } from "react-bootstrap";
-<<<<<<< HEAD
 import AOS from "aos";
 import "aos/dist/aos.css";
-=======
->>>>>>> 9ea9408678cdadabca242b72cec4eca2331d01e0
 
 import "./Characters.css";
 
@@ -17,7 +14,6 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-<<<<<<< HEAD
 import VisibilitySensor from "react-visibility-sensor";
 
 import ProgressProvider from "./ProgressProvider";
@@ -27,10 +23,6 @@ import { easeQuadInOut } from "d3-ease";
 
 const CharactersMainInfo = (props) => {
   AOS.init();
-=======
-
-const CharactersMainInfo = (props) => {
->>>>>>> 9ea9408678cdadabca242b72cec4eca2331d01e0
   const character = props.c;
 
   const powerstats = {
