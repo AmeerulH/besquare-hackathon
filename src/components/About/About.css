@@ -1,15 +1,52 @@
 .aboutContainer {
-  background-color: #0b0c10;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #66fcf1;
+  font-size: calc(35px + 2vmin);
+   font-family: "Fredoka One", Times, serif;
+  color: #000000;
+  margin-bottom: auto+10px;
   /* color: #0b0c10;
   color: #1F2833;
   color:#C5C6C7;
   color: #66FCF1;
   color: #45A29E; */
 }
+
+.Para1 {
+   font-family: "Alfa Slab One", Times, serif;
+   font-size: calc(10px + 2vmin);
+    display: flex;
+  align-items: center;
+  justify-content: center;
+   color: #a6a6a6;
+  padding-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  
+}
+
+.image {
+  width: 14cm;
+  height: 14cm;
+}
+
+.AboutBack {
+  background-image: url("../../AboutBack9.png");
+}
+
+.box {
+  border-style: groove;
+  align-items: left;
+  justify-content:left;
+  margin-right: 20px;  
+}
+
+.CTBRS {
+  font-family: "Patua One", Times, serif;
+   font-size: calc(10px + 2vmin);
+   color: #8080ff;
+}
+
+      
