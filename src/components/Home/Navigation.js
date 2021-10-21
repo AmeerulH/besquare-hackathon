@@ -44,10 +44,7 @@ const Navigation = () => {
         <Route path="/Versus" component={Versus}></Route>
         <Route path="/Forum" component={Forum}></Route>
         <Route path="/Character" component={ShowCharacters}></Route>
-<<<<<<< HEAD
-=======
         <Route path="/About" component={About}></Route>
->>>>>>> 9ea9408678cdadabca242b72cec4eca2331d01e0
       </Switch>
     </>
   );
