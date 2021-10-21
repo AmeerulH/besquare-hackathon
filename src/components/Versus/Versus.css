@@ -1,4 +1,4 @@
-.first-hero {
+/* .first-hero {
   height: 300px;
   width: 200px;
   background-color: black;
@@ -31,6 +31,100 @@
   padding: 5% 10% 5%;
 } */
 
-.choose-hero {
+/* .choose-hero {
   border: 1px solid red;
+}
+*/
+
+.char-arrange {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  border-radius: 0.7rem;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.hero-box {
+  margin: 5px 5px;
+}
+
+.hero-box:hover {
+  transform: scale(1.2, 1.2);
+  transition-duration: 1s;
+  z-index: 1;
+}
+
+.hero-box:hover .character-names {
+  display: block;
+}
+
+.character-names {
+  display: none;
+  color: white;
+  font-size: 15px;
+}
+
+.top-section {
+  padding: 1vh;
+  font-size: 50px;
+}
+
+.pick-hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-hero {
+  width: 400px;
+  height: 450px;
+  margin: 80px 80px;
+  border-radius: 1rem;
+  background-color: red;
+}
+
+.left-sp {
+  width: 400px;
+  height: 450px;
+  border-radius: 1rem;
+  box-shadow: 2px 3px 5px 1px;
+}
+
+.right-hero {
+  width: 400px;
+  height: 450px;
+  margin: 80px 80px;
+  border-radius: 1rem;
+}
+
+.right-sp {
+  width: 400px;
+  height: 450px;
+  border-radius: 1rem;
+  box-shadow: 2px 3px 5px 1px;
+}
+
+.versus {
+  margin: 100px 100px;
+  font-size: 100px;
+}
+
+.first-box {
+  display: flex;
+  align-content: flex-end;
+}
+
+.right-arrange {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: red;
+}
+
+.second-box {
+  display: flex;
+  align-content: flex-start;
 }
