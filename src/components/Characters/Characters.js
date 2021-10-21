@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Dropdown } from "react-bootstrap";
 import "./Characters.css";
+import { useHistory } from "react-router-dom";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import text from "../../text-test1.png";
 
@@ -20,12 +20,10 @@ function Characters() {
 
   // function to filter their alignment
   function sortAlign(alignment) {
-    console.log(
-      charArray.sort(
-        (a, b) =>
-          b.biography.alignment.indexOf(alignment) -
-          a.biography.alignment.indexOf(alignment)
-      )
+    charArray.sort(
+      (a, b) =>
+        b.biography.alignment.indexOf(alignment) -
+        a.biography.alignment.indexOf(alignment)
     );
   }
 
@@ -82,7 +80,7 @@ function Characters() {
 
   // sends character information on card click to the next page
   function getCharacterDetails(character) {
-    history.push(`/character/${character.id}`, character);
+    history.push(`/Character/${character.id}`, { state: { character } });
     console.log(character);
   }
 
