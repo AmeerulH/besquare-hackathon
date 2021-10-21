@@ -125,6 +125,7 @@ function Versus() {
                 styles={buildStyles({
                   pathColor: "#99D98C",
                   trailColor: "#E0FAFA",
+                  backgroundColor: "#E0FAFA",
                 })}
               >
                 <div>

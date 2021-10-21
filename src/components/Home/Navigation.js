@@ -7,31 +7,36 @@ import Home from "./Home";
 import Forum from "../Forum/Forum";
 import ShowCharacters from "../Characters/ShowCharacters";
 import About from "../About/About";
+import "./Navigation.css";
 
 const Navigation = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar className="main-nav">
         <Container>
-          <Navbar.Brand as={Link} to="/">
-            React-Bootstrap
+          <Navbar.Brand
+            style={{ fontWeight: "bold", color: "#66fcf1" }}
+            as={Link}
+            to="/"
+          >
+            S.P
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">
+              <Nav.Link style={{ color: "#66fcf1" }} as={Link} to="/">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/Characters">
+              <Nav.Link style={{ color: "#66fcf1" }} as={Link} to="/Characters">
                 Characters
               </Nav.Link>
-              <Nav.Link as={Link} to="/Versus">
+              <Nav.Link style={{ color: "#66fcf1" }} as={Link} to="/Versus">
                 Versus
               </Nav.Link>
-              <Nav.Link as={Link} to="/Forum">
+              <Nav.Link style={{ color: "#66fcf1" }} as={Link} to="/Forum">
                 Forum
               </Nav.Link>
-              <Nav.Link as={Link} to="/About">
+              <Nav.Link style={{ color: "#66fcf1" }} as={Link} to="/About">
                 About
               </Nav.Link>
             </Nav>
