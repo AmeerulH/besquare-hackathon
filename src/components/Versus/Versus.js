@@ -3,6 +3,11 @@ import { Card, Img } from "react-bootstrap";
 import "./Versus.css";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
+import {
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 function Versus() {
   let charArray = CharacterDetails();
@@ -22,6 +27,8 @@ function Versus() {
   const [player2Dura, setPlayer2Dura] = useState([]);
   const [player1Power, setPlayer1Power] = useState([]);
   const [player2Power, setPlayer2Power] = useState([]);
+  const [player1Overall, setPlayer1Overall] = useState(0);
+  const [player2Overall, setPlayer2Overall] = useState(0);
 
   const [flag, setFlag] = useState(true);
 
@@ -46,6 +53,9 @@ function Versus() {
       setPlayer1Speed(cardSpeed);
       setPlayer1Dura(cardDura);
       setPlayer1Power(cardPower);
+      let overall =
+        cardStats + cardStrength + cardIntel + cardSpeed + cardDura + cardPower;
+      setPlayer1Overall(overall);
       setFlag(false);
     } else {
       setPlayer2(cardImage);
@@ -56,6 +66,9 @@ function Versus() {
       setPlayer2Speed(cardSpeed);
       setPlayer2Dura(cardDura);
       setPlayer2Power(cardPower);
+      let overall =
+        cardStats + cardStrength + cardIntel + cardSpeed + cardDura + cardPower;
+      setPlayer2Overall(overall);
       setFlag(true);
     }
   }
@@ -89,46 +102,199 @@ function Versus() {
   };
 
   return (
-    <>
-      <div className="mid-section"></div>
+    <div className="background">
+      <>
+        <div className="mid-section"></div>
 
-      <div className="pick-hero">
-        <div className="first-box">
-          <Card className="left-hero">
-            <Card.Img className="left-sp" variant="top" src={player1} />
-          </Card>
-          <Card>
-            <Card.Title>{player1Name}</Card.Title>
-            <Card.Title>Combat: {player1Stats}</Card.Title>
-            <Card.Title>Strength: {player1Strength}</Card.Title>
-            <Card.Title>Intelligence: {player1Intel}</Card.Title>
-            <Card.Title>Speed: {player1Speed}</Card.Title>
-            <Card.Title>Durability: {player1Dura}</Card.Title>
-            <Card.Title>Power: {player1Power}</Card.Title>
-          </Card>
+        <div className="pick-hero">
+          <div className="first-box">
+            <Card className="left-hero">
+              <Card.Img className="left-sp" src={player1} />
+              <Card.Title className="overall-pos1">
+                Overall: {player1Overall}
+              </Card.Title>
+              <Card.ImgOverlay className="leftImageOverlay">
+                <Card.Title className="player1Name">{player1Name}</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+            <Card className="stats-left-hero1">
+              <CircularProgressbarWithChildren
+                value={player1Stats}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Combat: <text> </text>
+                  <strong>{player1Stats}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+              <CircularProgressbarWithChildren
+                value={player1Strength}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Strength: <text> </text>
+                  <strong>{player1Strength}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+              <CircularProgressbarWithChildren
+                value={player1Intel}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Intelligence: <text> </text>
+                  <strong>{player1Intel}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+            </Card>
+            <Card className="stats-left-hero2">
+              <CircularProgressbarWithChildren
+                value={player1Speed}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Speed: <text> </text>
+                  <strong>{player1Speed}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+              <CircularProgressbarWithChildren
+                value={player1Dura}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Durability: <text> </text>
+                  <strong>{player1Dura}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+              <CircularProgressbarWithChildren
+                value={player1Power}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Power: <text> </text>
+                  <strong>{player1Power}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+            </Card>
+          </div>
+          <div className="versus">
+            <img
+              className="versus-image"
+              src="https://i.pinimg.com/originals/06/1d/de/061dde1c16977f7d2ae3a2c6976e6a99.png"
+            />
+          </div>
+          <div className="second-box">
+            <Card className="stats-right-hero1">
+              <CircularProgressbarWithChildren
+                value={player2Stats}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Combat: <text> </text>
+                  <strong>{player2Stats}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+              <CircularProgressbarWithChildren
+                value={player2Strength}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Strength: <text> </text>
+                  <strong>{player2Strength}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+              <CircularProgressbarWithChildren
+                value={player2Intel}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Intelligence: <text> </text>
+                  <strong>{player2Intel}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+            </Card>
+            <Card className="stats-right-hero2">
+              <CircularProgressbarWithChildren
+                value={player2Speed}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Speed: <text> </text>
+                  <strong>{player2Speed}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+              <CircularProgressbarWithChildren
+                value={player2Dura}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Durability: <text> </text>
+                  <strong>{player2Dura}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+              <CircularProgressbarWithChildren
+                value={player2Power}
+                styles={buildStyles({
+                  pathColor: "#99D98C",
+                  trailColor: "#E0FAFA",
+                })}
+              >
+                <div>
+                  Power: <text> </text>
+                  <strong>{player2Power}</strong>
+                </div>
+              </CircularProgressbarWithChildren>
+            </Card>
+            <Card className="right-hero">
+              <Card.Img className="right-sp" variant="top" src={player2} />
+              <Card.Title className="overall-pos2">
+                Overall: {player1Overall}
+              </Card.Title>
+              <Card.ImgOverlay className="rightImageOverlay">
+                <Card.Title className="player2Name">{player2Name}</Card.Title>
+              </Card.ImgOverlay>
+            </Card>
+          </div>
         </div>
-        <div className="versus">Versus</div>
-        <div className="second-box">
-          <Card>
-            <Card.Title>{player2Name}</Card.Title>
-            <Card.Title>Combat: {player2Stats}</Card.Title>
-            <Card.Title>Strength: {player2Strength}</Card.Title>
-            <Card.Title>Intelligence: {player2Intel}</Card.Title>
-            <Card.Title>Speed: {player2Speed}</Card.Title>
-            <Card.Title>Durability: {player2Dura}</Card.Title>
-            <Card.Title>Power: {player2Power}</Card.Title>
-          </Card>
-          <Card className="right-hero">
-            <Card.Img className="right-sp" variant="top" src={player2} />
-          </Card>
+        <div>
+          <div className="scroll">
+            <div className="char-arrange"> {charArray.map(renderCard)} </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <div className="scroll">
-          <div className="char-arrange"> {charArray.map(renderCard)} </div>
-        </div>
-      </div>
-    </>
+      </>
+    </div>
   );
 }
 
