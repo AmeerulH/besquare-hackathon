@@ -152,7 +152,7 @@
   border: 1px solid black;
   background-image: url(https://wallpaperaccess.com/full/876546.jpg);
   width: 50vw;
-  height: 90vh;
+  height: fit-content;
 }
 
 .heroName {
