@@ -1,0 +1,15 @@
+.aboutContainer {
+  background-color: #0b0c10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #66fcf1;
+  /* color: #0b0c10;
+  color: #1F2833;
+  color:#C5C6C7;
+  color: #66FCF1;
+  color: #45A29E; */
+}

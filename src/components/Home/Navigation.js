@@ -5,6 +5,8 @@ import Characters from "../Characters/Characters";
 import Versus from "../Versus/Versus";
 import Home from "./Home";
 import Forum from "../Forum/Forum";
+import ShowCharacters from "../Characters/ShowCharacters";
+import About from "../About/About";
 
 const Navigation = () => {
   return (
@@ -29,6 +31,9 @@ const Navigation = () => {
               <Nav.Link as={Link} to="/Forum">
                 Forum
               </Nav.Link>
+              <Nav.Link as={Link} to="/About">
+                About
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -38,6 +43,8 @@ const Navigation = () => {
         <Route path="/Characters" component={Characters}></Route>
         <Route path="/Versus" component={Versus}></Route>
         <Route path="/Forum" component={Forum}></Route>
+        <Route path="/Character" component={ShowCharacters}></Route>
+        <Route path="/About" component={About}></Route>
       </Switch>
     </>
   );
