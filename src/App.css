@@ -1,9 +1,7 @@
-body {
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+.App {
+  text-align: center;
 }
 
-<<<<<<< HEAD
 .Navbar {
   background: transparent;
 }
@@ -30,19 +28,4 @@ body {
   to {
     transform: rotate(360deg);
   }
-=======
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
->>>>>>> d3a6c23a4a3171ff815945521381b61b8c9a69d0
 }
