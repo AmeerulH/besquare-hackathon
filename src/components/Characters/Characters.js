@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import text from "../../text-test1.png";
 
 function Characters() {
   //characters API, place where the data is called from
@@ -87,7 +88,8 @@ function Characters() {
   const renderCard = (card, index) => {
     return (
       <Card
-        className="scale box"
+        className="box"
+        id="scale"
         border="dark"
         style={{ width: "10rem" }}
         key={index}
@@ -103,97 +105,124 @@ function Characters() {
 
   return (
     <>
-      <div className="characters-header">CHOOSE YOUR HERO</div>
-      <div className="filter">
-        <span className="filter-word">FILTER HEROES</span>
-        <span>
-          <Dropdown>
-            <Dropdown.Toggle size="sm" variant="secondary" id="dropdown-basic">
-              Names
-            </Dropdown.Toggle>
+      <div className="background-image">
+        <div className="charactersDiv">
+          <div className="characters-header">
+            <img src={text} />
+          </div>
+          <div className="filter">
+            <span className="filter-word">FILTER HEROES</span>
+            <span className="dropdown">
+              <Dropdown>
+                <Dropdown.Toggle
+                  size="md"
+                  variant="secondary"
+                  id="dropdown-basic"
+                >
+                  Names
+                </Dropdown.Toggle>
 
-            <Dropdown.Menu className="dropdown">
-              <Dropdown.Item
-                href="#/action-1"
-                onClick={() => ascending(charArray)}
-              >
-                A - Z
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#/action-2"
-                onClick={() => descending(charArray)}
-              >
-                Z - A
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </span>
-        <span>
-          <Dropdown>
-            <Dropdown.Toggle size="sm" variant="secondary" id="dropdown-basic">
-              Alignments
-            </Dropdown.Toggle>
+                <Dropdown.Menu className="dropdown">
+                  <Dropdown.Item
+                    href="#/action-1"
+                    onClick={() => ascending(charArray)}
+                  >
+                    A - Z
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    href="#/action-2"
+                    onClick={() => descending(charArray)}
+                  >
+                    Z - A
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </span>
+            <span>
+              <Dropdown>
+                <Dropdown.Toggle
+                  size="md"
+                  variant="secondary"
+                  id="dropdown-basic"
+                >
+                  Alignments
+                </Dropdown.Toggle>
 
-            <Dropdown.Menu className="dropdown">
-              <Dropdown.Item
-                href="#/action-1"
-                onClick={() => sortAlign("good")}
-              >
-                GOOD
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-2" onClick={() => sortAlign("bad")}>
-                EVIL
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#/action-3"
-                onClick={() => sortAlign("neutral")}
-              >
-                NEUTRAL
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </span>
-        <span>
-          <Dropdown>
-            <Dropdown.Toggle size="sm" variant="secondary" id="dropdown-basic">
-              Power
-            </Dropdown.Toggle>
+                <Dropdown.Menu className="dropdown">
+                  <Dropdown.Item
+                    href="#/action-1"
+                    onClick={() => sortAlign("good")}
+                  >
+                    GOOD
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    href="#/action-2"
+                    onClick={() => sortAlign("bad")}
+                  >
+                    EVIL
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    href="#/action-3"
+                    onClick={() => sortAlign("neutral")}
+                  >
+                    NEUTRAL
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </span>
+            <span>
+              <Dropdown>
+                <Dropdown.Toggle
+                  size="md"
+                  variant="secondary"
+                  id="dropdown-basic"
+                >
+                  Power
+                </Dropdown.Toggle>
 
-            <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1" onClick={() => sortPower("low")}>
-                Lowest - Highest
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#/action-2"
-                onClick={() => sortPower("high")}
-              >
-                Highest - Lowest
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </span>
-        <span>
-          <SearchIcon fontSize="large" />
-          <input
-            type="text"
-            placeholder="Search for Hero.."
-            onChange={(event) => setSearchHero(event.target.value)}
-          />
-        </span>
-      </div>
-      <div></div>
-      <div className="grid-box">
-        {charArray
-          .filter((renderCard) => {
-            if (searchHero == "") {
-              return renderCard;
-            } else if (
-              renderCard.name.toLowerCase().includes(searchHero.toLowerCase())
-            ) {
-              return renderCard;
-            }
-          })
-          .map(renderCard)}
+                <Dropdown.Menu className="dropdown">
+                  <Dropdown.Item
+                    href="#/action-1"
+                    onClick={() => sortPower("low")}
+                  >
+                    Lowest - Highest
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    href="#/action-2"
+                    onClick={() => sortPower("high")}
+                  >
+                    Highest - Lowest
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </span>
+            <span className="search-bar">
+              <SearchIcon fontSize="large" />
+              <input
+                type="text"
+                placeholder="Search for Hero.."
+                onChange={(event) => setSearchHero(event.target.value)}
+              />
+            </span>
+          </div>
+          <div className="selection-box">
+            <div className="grid-box">
+              {charArray
+                .filter((renderCard) => {
+                  if (searchHero == "") {
+                    return renderCard;
+                  } else if (
+                    renderCard.name
+                      .toLowerCase()
+                      .includes(searchHero.toLowerCase())
+                  ) {
+                    return renderCard;
+                  }
+                })
+                .map(renderCard)}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
