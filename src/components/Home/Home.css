@@ -25,8 +25,12 @@
 
 .HeroDisplay > h1 {
   font-size: 5vw;
-  font-weight: bolder;
-  text-shadow: 0 0 2px black, 0 0 2px black;
+  color: #66fcf1;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
+  font-family: "Bungee Inline", cursive;
+  font-size: 4vw;
+  background: none;
 }
 
 .heroCard {
@@ -44,11 +48,14 @@
 
 .character-names {
   display: flex;
-  justify-content: flex-start;
-  background-color: black;
-  color: white;
+  justify-content: center;
+  background: none;
+  color: black;
   font-size: 2vw;
   font-weight: bolder;
   border-radius: 0.4rem;
   padding: 5px 5px;
+  font-family: "Bangers", cursive;
+  font-family: "Bungee Inline", cursive;
+  text-shadow: 0 0 10px white, 0 0 10px white;
 }
