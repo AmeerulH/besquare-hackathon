@@ -7,6 +7,10 @@
   font-size: calc(40px + 2vmin);
   color: #66fcf1;
 }
+.maintext {
+  font-weight: 900;
+  font-size: 5rem;
+}
 .scrolldown {
   margin-top: 50vh;
   display: flex;

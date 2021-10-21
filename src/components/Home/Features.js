@@ -1,13 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  ListGroup,
-  Button,
-  Nav,
-} from "react-bootstrap";
+import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "../../images/marveldc.jpg";
@@ -50,7 +42,7 @@ const Features = () => {
                     <Card.Title className="vsCardTitle">
                       HEAD TO HEAD
                     </Card.Title>
-                    <Card.Text>
+                    <Card.Text className="vsCardText">
                       Choose between different heroes to compare the statistics
                     </Card.Text>
                     <Card.Img variant="top" src={Image} fluid />
@@ -61,7 +53,9 @@ const Features = () => {
                 <Card as={Link} to="/Forum" className="forumCard">
                   <Card.Body>
                     <Card.Title className="forumCardTitle">FORUM</Card.Title>
-                    <Card.Text>Community Discussion</Card.Text>
+                    <Card.Text className="forumCardText">
+                      Community Discussion
+                    </Card.Text>
                   </Card.Body>
                 </Card>
               </Col>

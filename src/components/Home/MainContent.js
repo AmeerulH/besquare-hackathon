@@ -11,12 +11,14 @@ const MainContent = () => {
   }, []);
   return (
     <div className="maincontent">
-      <div data-aos="zoom-in">
-        <Container fluid>
-          <Row>
-            <Col className="text"> WHO IS THE BEST?</Col>
-          </Row>
-        </Container>
+      <div>
+        <div data-aos="zoom-in">
+          <Container fluid>
+            <Row>
+              <Col className="maintext"> WHO IS THE BEST?</Col>
+            </Row>
+          </Container>
+        </div>
       </div>
       <div>
         <Row>
@@ -29,7 +31,7 @@ const MainContent = () => {
               fluid
             >
               <div>
-                <i class="downText">scroll down</i>
+                <i class="downText">Scroll Down</i>
               </div>
               <ExpandMoreIcon id="arrowDown" />{" "}
             </span>
