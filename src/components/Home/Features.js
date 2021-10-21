@@ -27,12 +27,7 @@ const Features = () => {
           <Container>
             <Row>
               <Col>
-                <Card
-                  as={Link}
-                  to="/Characters"
-                  className="charCard"
-                  style={{ width: "18rem" }}
-                >
+                <Card as={Link} to="/Characters" className="charCard">
                   <Card.Body>
                     <Card.Title className="charCardTitle">
                       CHARACTERS
@@ -65,7 +60,7 @@ const Features = () => {
               <Col>
                 <Card as={Link} to="/Forum" className="forumCard">
                   <Card.Body>
-                    <Card.Title>FORUM</Card.Title>
+                    <Card.Title className="forumCardTitle">FORUM</Card.Title>
                     <Card.Text>Community Discussion</Card.Text>
                   </Card.Body>
                 </Card>
