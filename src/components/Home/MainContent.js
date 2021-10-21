@@ -12,29 +12,20 @@ const MainContent = () => {
   return (
     <div className="maincontent">
       <div data-aos="zoom-in">
-        <Container fluid>
-          <Row>
-            <Col className="text"> WHO IS THE BEST?</Col>
-          </Row>
-        </Container>
+        <h1 className="maintext"> WHO IS THE BEST?</h1>
       </div>
-      <div>
-        <Row>
-          <Col>
-            <span
-              className="scrolldown"
-              data-aos="fade-up"
-              data-aos-easing="ease"
-              data-aos-delay="800"
-              fluid
-            >
-              <div>
-                <i class="downText">scroll down</i>
-              </div>
-              <ExpandMoreIcon id="arrowDown" />{" "}
-            </span>
-          </Col>
-        </Row>
+      <div className="scrolldown">
+        <span
+          data-aos="fade-up"
+          data-aos-easing="ease"
+          data-aos-delay="800"
+          fluid
+        >
+          <div>
+            <i class="downText">Scroll Down</i>
+          </div>
+          <ExpandMoreIcon id="arrowDown" />{" "}
+        </span>
       </div>
     </div>
   );

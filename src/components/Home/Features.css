@@ -3,6 +3,8 @@
   display: grid;
   align-items: center;
   justify-content: center;
+  font-family: "Bangers", cursive;
+  font-family: "Bungee Inline", cursive;
 }
 
 .header1 {
@@ -13,71 +15,70 @@
   background-color: transparent;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20vh;
+  font-size: 4vw;
+  padding-bottom: 20px;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+}
+
+.featureCards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
 }
 
 .lists {
-  color: #1f2833;
+  color: white;
+  background: none;
 }
 
-.charCard {
-  color: #1f2833;
-  height: 60vh;
+.vsImage {
+  width: 5vw;
+}
+
+.cardFeatures {
+  color: white;
+  display: grid;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   box-shadow: 10px;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   border-color: #1f2833;
+  background-image: url("../../images/blue-abstract-rays-4k-blue-lines-creative-blue-abstract-backgrounds.jpg");
+  background-size: cover;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  margin: 0 10px;
+  object-fit: cover;
+  height: 50vh;
+  width: 30vw;
 }
+
 .charCardTitle {
-  color: #1f2833;
+  color: black;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
+  font-size: 2.5vw;
+  text-shadow: 0 0 10px white, 0 0 10px white;
 }
-.vsCard {
-  color: #1f2833;
-  height: 60vh;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 10px;
-  border-radius: 10px;
-  border-color: #1f2833;
-}
-
-.forumCard {
-  color: #1f2833;
-  height: 60vh;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 10px;
-  border-radius: 10px;
-  border-color: #1f2833;
-}
-
 .vsCardTitle {
-  color: #1f2833;
+  color: black;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
-}
-.forumCardTitle {
-  color: #1f2833;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
+  font-size: 2.5vw;
+  text-shadow: 0 0 10px white, 0 0 10px white;
 }
 
-.charCard:hover {
-  color: #66fcf1;
+.forumCardTitle {
+  color: black;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vw;
+  text-shadow: 0 0 10px white, 0 0 10px white;
 }
-.vsCard:hover {
-  color: #66fcf1;
-}
-.forumCard:hover {
+
+.cardFeatures:hover {
   color: #66fcf1;
 }
 .lists:hover {

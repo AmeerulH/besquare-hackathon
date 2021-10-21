@@ -1,0 +1,190 @@
+.char-arrange {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  border-radius: 0.7rem;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.hero-box {
+  margin: 5px 5px;
+}
+
+.hero-box:hover {
+  transform: scale(1.2, 1.2);
+  transition-duration: 1s;
+  z-index: 1;
+}
+
+.hero-box:hover .character-names-versus {
+  display: block;
+}
+
+.character-names-versus {
+  display: none;
+  color: white;
+  font-size: 15px;
+}
+
+.top-section {
+  padding: 1vh;
+  font-size: 50px;
+}
+
+.pick-hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-hero {
+  width: 400px;
+  height: 450px;
+  margin: 80px 80px 30px 30px;
+  border-radius: 1rem;
+  background-color: red;
+}
+
+.left-sp {
+  width: 400px;
+  height: 450px;
+  border-radius: 1rem;
+  box-shadow: 2px 3px 5px 1px;
+}
+
+.right-hero {
+  width: 400px;
+  height: 450px;
+  margin: 80px 80px;
+  border-radius: 1rem;
+}
+
+.right-sp {
+  width: 400px;
+  height: 450px;
+  border-radius: 1rem;
+  box-shadow: 2px 3px 5px 1px;
+}
+
+.first-box {
+  display: flex;
+  align-content: flex-end;
+}
+
+.right-arrange {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: red;
+}
+
+.second-box {
+  display: flex;
+  align-content: flex-start;
+}
+
+.stats-left-hero1 {
+  height: 120px;
+  width: 120px;
+  font-size: 0.8vw;
+  padding: 100px 0 150px 0;
+  color: white;
+  border: none;
+  background: none;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
+}
+
+.stats-left-hero2 {
+  height: 120px;
+  width: 120px;
+  font-size: 0.8vw;
+  padding: 100px 0 100px 0;
+  color: white;
+  border: none;
+  background: none;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
+}
+
+.stats-right-hero1 {
+  height: 120px;
+  width: 120px;
+  font-size: 0.8vw;
+  padding: 100px 0 100px 0;
+  color: white;
+  border: none;
+  background: none;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
+}
+
+.stats-right-hero2 {
+  height: 120px;
+  width: 120px;
+  font-size: 0.8vw;
+  padding: 100px 0 100px 0;
+  color: white;
+  border: none;
+  background: none;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
+}
+
+.leftImageOverlay {
+  display: flex;
+  color: white;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.player1Name {
+  font-size: 2vw;
+  color: black;
+  text-shadow: 0 0 10px white, 0 0 10px white;
+  font-family: "Bangers", cursive;
+}
+
+.player2Name {
+  font-size: 2vw;
+  color: black;
+  text-shadow: 0 0 10px white, 0 0 10px white;
+  font-family: "Bangers", cursive;
+}
+
+.rightImageOverlay {
+  display: flex;
+  color: white;
+  justify-content: flex-end;
+  align-content: flex-end;
+}
+
+.versus-image {
+  width: 400px;
+  height: 400px;
+}
+
+.overall-pos1 {
+  padding-top: 20px;
+  font-size: 2vw;
+  color: white;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
+}
+
+.overall-pos2 {
+  padding-top: 20px;
+  font-size: 2vw;
+  color: white;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
+}
+
+.background {
+  background-image: url("https://cutewallpaper.org/21/fire-background-gif/Fire-Fighting-GIF-Find-Share-on-GIPHY.gif");
+  background-size: cover;
+  position: sticky;
+}

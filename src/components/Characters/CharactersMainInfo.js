@@ -3,6 +3,8 @@ import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Image } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import "./Characters.css";
 
@@ -12,8 +14,15 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import VisibilitySensor from "react-visibility-sensor";
+
+import ProgressProvider from "./ProgressProvider";
+import AnimatedProgressProvider from "./AnimatedProgressProvider";
+import ChangingProgressProvider from "./ChangingProgressProvider";
+import { easeQuadInOut } from "d3-ease";
 
 const CharactersMainInfo = (props) => {
+  AOS.init();
   const character = props.c;
 
   const powerstats = {
@@ -43,85 +52,81 @@ const CharactersMainInfo = (props) => {
   return (
     <div className="charactersMainInfo">
       <div className="charactersInfo">
-        <Container>
+        <Container fluid="md">
           <Row>
             <Container className="heroInfo">
+              <span class="border tl"></span>
+              <span class="border tr"></span>
+              <span class="border bl"></span>
+              <span class="border br"></span>
               <Row>
-                <Col>
+                <Col data-aos="fade-up">
                   <Row className="heroName">{character.name}</Row>
                   <Row className="heroDescription">
-                    <Row>Full Name: {character.biography.fullName}</Row>
-                    <Row>Aliases: {character.biography.aliases}</Row>
-                    <Row style={{ textTransform: "capitalize" }}>
-                      Alignment: {character.biography.alignment}
-                    </Row>
-                    <Row style={{ textTransform: "capitalize" }}>
-                      Occupation: {character.work.occupation}
-                    </Row>
+                    {Object.keys(charBio).map((bioName) => {
+                      return (
+                        <Row className="bioInformation">
+                          <Col sm={4} style={{ textTransform: "capitalize" }}>
+                            <strong>{bioName.replace(/_/g, " ")}:</strong>
+                          </Col>
+                          <Col sm={8} style={{ textTransform: "capitalize" }}>
+                            {charBio[bioName]}
+                          </Col>
+                        </Row>
+                      );
+                    })}
                   </Row>
                 </Col>
                 <Col>
                   <Image
-                    classname="heroImage"
+                    className="heroImage"
                     src={character.images.lg}
                     rounded
+                    data-aos="zoom-in"
+                    data-aos-duration="500"
                   />
                 </Col>
               </Row>
             </Container>
           </Row>
-          <Row>
-            <Container className="powerInfo">
-              <Row>
-                <Col>
-                  <Row>
-                    {Object.keys(powerstats).map((stat) => {
-                      return (
-                        <div style={{ width: 200, height: 200 }}>
-                          <CircularProgressbarWithChildren
-                            value={powerstats[stat]}
-                            styles={buildStyles({
-                              pathColor: "#99D98C",
-                              trailColor: "#E0FAFA",
-                            })}
-                          >
-                            <div style={{ fontSize: 16, marginTop: -5 }}>
-                              {stat} <text> </text>
-                              <strong>{powerstats[stat]}</strong>
-                            </div>
-                          </CircularProgressbarWithChildren>
-                        </div>
-                      );
-                    })}
-                  </Row>
-                </Col>
+          <Container className="powerInfo">
+            <Row>
+              <Row className="wordPowers">Powers?</Row>
+              <Row className="circularProgressbar">
+                {Object.keys(powerstats).map((stat) => {
+                  return (
+                    <AnimatedProgressProvider
+                      valueStart={0}
+                      valueEnd={powerstats[stat]}
+                      duration={1.4}
+                      easingFunction={easeQuadInOut}
+                    >
+                      {(value) => {
+                        const roundedValue = Math.round(value);
+                        return (
+                          <div style={{ width: 200, height: 200 }}>
+                            <CircularProgressbarWithChildren
+                              value={roundedValue}
+                              styles={buildStyles({
+                                pathColor: "#99D98C",
+                                trailColor: "#E0FAFA",
+                              })}
+                            >
+                              <div style={{ fontSize: 16, marginTop: -5 }}>
+                                {stat} <text> </text>
+                                <strong>{powerstats[stat]}</strong>
+                              </div>
+                            </CircularProgressbarWithChildren>
+                          </div>
+                        );
+                      }}
+                    </AnimatedProgressProvider>
+                  );
+                })}
               </Row>
-            </Container>
-          </Row>
-          <Row>
-            <Container className="bioContainer">
-              {Object.keys(charBio).map((bioName) => {
-                return (
-                  <Row className="bioInformation">
-                    <Col
-                      sm={3}
-                      className="bioDisplay"
-                      style={{ textTransform: "capitalize" }}
-                    >
-                      <strong>{bioName.replace(/_/g, " ")}:</strong>
-                    </Col>
-                    <Col
-                      sm={9}
-                      className="bioDisplay1"
-                      style={{ textTransform: "capitalize" }}
-                    >
-                      {charBio[bioName]}
-                    </Col>
-                  </Row>
-                );
-              })}
-            </Container>
-          </Row>
+            </Row>
+          </Container>
+          <Row></Row>
         </Container>
       </div>
     </div>
