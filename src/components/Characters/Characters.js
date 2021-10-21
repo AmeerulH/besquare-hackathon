@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Dropdown } from "react-bootstrap";
 import "./Characters.css";
+import { useHistory } from "react-router-dom";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Characters() {
@@ -13,52 +13,73 @@ function Characters() {
 
   //The state for the search function
   const [searchHero, setSearchHero] = useState("");
-  //The state for the name sort function
-  const [sortType, setSortType] = useState("asc");
-  const [array, setArray] = useState(CharacterDetails());
 
-  useEffect(() => {
-    setArray(array);
-  }, [array]);
+  //Changes the view on character array change (filter)
+  useEffect(() => {}, [charArray]);
 
-  //The function for the click event to change the state of sort type
-  const setSort = (sortType) => {
-    setSortType(sortType);
-  };
-
-  //   //The process to sort the names in ascending order and descending order
-  //   const sorted = charArray.sort((a, b) => {
-  //     const isReversed = sortType === "asc" ? 1 : -1;
-  //     return isReversed * a.name.localeCompare(b.name);
-  //   });
-
+  // function to filter their alignment
   function sortAlign(alignment) {
-    const tempArray = [];
-    for (let i = 0; i < charArray.length; i++) {
-      if (charArray[i].biography.alignment === alignment) {
-        tempArray.push(charArray[i]);
-      }
-    }
-    setArray(tempArray);
+    charArray.sort(
+      (a, b) =>
+        b.biography.alignment.indexOf(alignment) -
+        a.biography.alignment.indexOf(alignment)
+    );
   }
 
-  function sortPower() {
-    for (let i = 0; i < 1; i++) {
-      let intelligence = charArray[i].powerstats.intelligence;
-      let strength = charArray[i].powerstats.strength;
-      let speed = charArray[i].powerstats.speed;
-      let durability = charArray[i].powerstats.durability;
-      let power = charArray[i].powerstats.power;
-      let combat = charArray[i].powerstats.combat;
-      let overall =
-        intelligence + strength + speed + durability + power + combat;
-      //   charArray.push({ overall: overall });
-    }
-    console.log(charArray[0]);
+  //Name sorting function
+  function ascending(obj) {
+    obj.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
   }
 
+  //Name sorting function
+  function descending(obj) {
+    obj.sort((a, b) => (b.name > a.name ? 1 : a.name > b.name ? -1 : 0));
+  }
+
+  //sort by overall power
+  function sortPower(sort) {
+    if (sort === "low") {
+      charArray.sort(function (a, b) {
+        return (
+          a.powerstats.intelligence +
+          a.powerstats.strength +
+          a.powerstats.speed +
+          a.powerstats.durability +
+          a.powerstats.power +
+          a.powerstats.combat -
+          (b.powerstats.intelligence +
+            b.powerstats.strength +
+            b.powerstats.speed +
+            b.powerstats.durability +
+            b.powerstats.power +
+            b.powerstats.combat)
+        );
+      });
+    }
+
+    if (sort === "high") {
+      charArray.sort(function (a, b) {
+        return (
+          b.powerstats.intelligence +
+          b.powerstats.strength +
+          b.powerstats.speed +
+          b.powerstats.durability +
+          b.powerstats.power +
+          b.powerstats.combat -
+          (a.powerstats.intelligence +
+            a.powerstats.strength +
+            a.powerstats.speed +
+            a.powerstats.durability +
+            a.powerstats.power +
+            a.powerstats.combat)
+        );
+      });
+    }
+  }
+
+  // sends character information on card click to the next page
   function getCharacterDetails(character) {
-    history.push(`/character/${character.id}`, character);
+    history.push(`/Character/${character.id}`, { state: { character } });
     console.log(character);
   }
 
@@ -92,10 +113,16 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1" onClick={() => setSort("asc")}>
+              <Dropdown.Item
+                href="#/action-1"
+                onClick={() => ascending(charArray)}
+              >
                 A - Z
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-2" onClick={() => setSort("desc")}>
+              <Dropdown.Item
+                href="#/action-2"
+                onClick={() => descending(charArray)}
+              >
                 Z - A
               </Dropdown.Item>
             </Dropdown.Menu>
@@ -133,10 +160,15 @@ function Characters() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown">
-              <Dropdown.Item href="#/action-1" onClick={() => sortPower()}>
+              <Dropdown.Item href="#/action-1" onClick={() => sortPower("low")}>
                 Lowest - Highest
               </Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Highest - Lowest</Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-2"
+                onClick={() => sortPower("high")}
+              >
+                Highest - Lowest
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </span>
@@ -151,7 +183,7 @@ function Characters() {
       </div>
       <div></div>
       <div className="grid-box">
-        {array
+        {charArray
           .filter((renderCard) => {
             if (searchHero == "") {
               return renderCard;
