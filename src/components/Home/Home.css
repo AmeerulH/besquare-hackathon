@@ -3,3 +3,52 @@
   background-size: cover;
   position: sticky;
 }
+
+.HeroDisplay {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  font-weight: bolder;
+  color: #66fcf1;
+}
+
+.HeroCards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.HeroDisplay > h1 {
+  font-size: 5vw;
+  font-weight: bolder;
+  text-shadow: 0 0 2px black, 0 0 2px black;
+}
+
+.heroCard {
+  margin: 0 10px;
+  border: none;
+  border-radius: 0.6rem;
+}
+
+.heroCard:hover {
+  transform: scale(1.05);
+  position: relative;
+  box-shadow: 0 10px 20px #66fcf1, 0 10px 20px #66fcf1;
+  text-shadow: 0 0 2px #66fcf1, 0 0 2px #66fcf1;
+}
+
+.character-names {
+  display: flex;
+  justify-content: flex-start;
+  background-color: black;
+  color: white;
+  font-size: 2vw;
+  font-weight: bolder;
+  border-radius: 0.4rem;
+  padding: 5px 5px;
+}
