@@ -17,7 +17,7 @@ export const CharacterDetails = () => {
 
   useEffect(() => {
     getCharacters();
-  });
+  }, [url]);
 
   console.log(characters);
   return characters;
