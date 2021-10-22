@@ -199,7 +199,7 @@ function Characters() {
             <span className="search-bar">
               <input
                 type="text"
-                placeholder="Search for Hero..."
+                placeholder="Search for Hero.."
                 onChange={(event) => setSearchHero(event.target.value)}
               />
             </span>
