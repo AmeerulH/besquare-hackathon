@@ -197,12 +197,9 @@ function Characters() {
               </Dropdown>
             </span>
             <span className="search-bar">
-              <SearchIcon
-                fontSize="large"
-                style={{ color: "black", position: "absolute" }}
-              />
               <input
                 type="text"
+                placeholder="Searh for Hero..."
                 onChange={(event) => setSearchHero(event.target.value)}
               />
             </span>
