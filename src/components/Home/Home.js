@@ -7,7 +7,7 @@ import HeroDisplay from "./HeroDisplay";
 
 const Home = () => {
   return (
-    <div className="bg">
+    <div className="bgHome">
       <MainContent></MainContent>
       <Features></Features>
       <HeroDisplay></HeroDisplay>
