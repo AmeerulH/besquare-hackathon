@@ -27,7 +27,9 @@
 .character-names-versus {
   display: none;
   color: white;
-  font-size: 15px;
+  font-size: 14px;
+  font-family: "Bangers", cursive;
+  font-family: "Bungee Inline", cursive;
 }
 
 .top-section {
@@ -43,9 +45,9 @@
 .left-hero {
   width: 400px;
   height: 450px;
-  margin: 80px 80px 30px 30px;
+  margin: 40px 40px 65px 15px;
   border-radius: 1rem;
-  background-color: red;
+  background-color: rgb(0, 0, 0, 0.5);
 }
 
 .left-sp {
@@ -58,8 +60,9 @@
 .right-hero {
   width: 400px;
   height: 450px;
-  margin: 80px 80px;
+  margin: 40px 15px 65px 30px;
   border-radius: 1rem;
+  background-color: rgb(0, 0, 0, 0.5);
 }
 
 .right-sp {
@@ -89,8 +92,8 @@
 .stats-left-hero1 {
   height: 120px;
   width: 120px;
-  font-size: 0.8vw;
-  padding: 100px 0 150px 0;
+  font-size: 1vw;
+  padding: 50px 0 150px 0;
   color: white;
   border: none;
   background: none;
@@ -101,8 +104,8 @@
 .stats-left-hero2 {
   height: 120px;
   width: 120px;
-  font-size: 0.8vw;
-  padding: 100px 0 100px 0;
+  font-size: 1vw;
+  padding: 50px 0 100px 0;
   color: white;
   border: none;
   background: none;
@@ -113,8 +116,8 @@
 .stats-right-hero1 {
   height: 120px;
   width: 120px;
-  font-size: 0.8vw;
-  padding: 100px 0 100px 0;
+  font-size: 1vw;
+  padding: 50px 0 100px 0;
   color: white;
   border: none;
   background: none;
@@ -125,8 +128,8 @@
 .stats-right-hero2 {
   height: 120px;
   width: 120px;
-  font-size: 0.8vw;
-  padding: 100px 0 100px 0;
+  font-size: 1vw;
+  padding: 50px 0 100px 0;
   color: white;
   border: none;
   background: none;
@@ -164,11 +167,11 @@
 
 .versus-image {
   width: 400px;
-  height: 400px;
+  height: 500px;
 }
 
 .overall-pos1 {
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: 2vw;
   color: white;
   text-shadow: 0 0 10px black, 0 0 10px black;
@@ -176,7 +179,7 @@
 }
 
 .overall-pos2 {
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: 2vw;
   color: white;
   text-shadow: 0 0 10px black, 0 0 10px black;
@@ -187,4 +190,20 @@
   background-image: url("https://cutewallpaper.org/21/fire-background-gif/Fire-Fighting-GIF-Find-Share-on-GIPHY.gif");
   background-size: cover;
   position: sticky;
+}
+
+.mid-section {
+  color: white;
+  padding-top: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar-versus {
+  background-color: rgb(0, 0, 0, 0.6);
+  padding-top: 3px;
+  border-radius: 5px;
+  width: 13.5vw;
+  height: 4vh;
 }

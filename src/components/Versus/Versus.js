@@ -8,6 +8,7 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import SearchIcon from "@mui/icons-material/Search";
 
 function Versus() {
   let charArray = CharacterDetails();
@@ -73,6 +74,8 @@ function Versus() {
     }
   }
 
+  const [searchHero, setSearchHero] = useState("");
+
   const renderCard = (card, index) => {
     return (
       <Card
@@ -105,8 +108,17 @@ function Versus() {
 
   return (
     <div className="background">
-      <>
-        <div className="mid-section"></div>
+      <div className="versus-div">
+        <div className="mid-section">
+          <div className="search-bar-versus">
+            <SearchIcon fontSize="large" />
+            <input
+              type="text"
+              placeholder="Search for Hero.."
+              onChange={(event) => setSearchHero(event.target.value)}
+            />
+          </div>
+        </div>
 
         <div className="pick-hero">
           <div className="first-box">
@@ -119,7 +131,7 @@ function Versus() {
                 <Card.Title className="player1Name">{player1Name}</Card.Title>
               </Card.ImgOverlay>
             </Card>
-            <Card className="stats-left-hero1">
+            <Card className="stats-left-hero1" style={{ width: 140 }}>
               <CircularProgressbarWithChildren
                 value={player1Stats}
                 styles={buildStyles({
@@ -158,7 +170,7 @@ function Versus() {
                 </div>
               </CircularProgressbarWithChildren>
             </Card>
-            <Card className="stats-left-hero2">
+            <Card className="stats-left-hero2" style={{ width: 140 }}>
               <CircularProgressbarWithChildren
                 value={player1Speed}
                 styles={buildStyles({
@@ -204,7 +216,7 @@ function Versus() {
             />
           </div>
           <div className="second-box">
-            <Card className="stats-right-hero1">
+            <Card className="stats-right-hero1" style={{ width: 140 }}>
               <CircularProgressbarWithChildren
                 value={player2Stats}
                 styles={buildStyles({
@@ -242,7 +254,7 @@ function Versus() {
                 </div>
               </CircularProgressbarWithChildren>
             </Card>
-            <Card className="stats-right-hero2">
+            <Card className="stats-right-hero2" style={{ width: 140 }}>
               <CircularProgressbarWithChildren
                 value={player2Speed}
                 styles={buildStyles({
@@ -283,7 +295,7 @@ function Versus() {
             <Card className="right-hero">
               <Card.Img className="right-sp" variant="top" src={player2} />
               <Card.Title className="overall-pos2">
-                Overall: {player1Overall}
+                Overall: {player2Overall}
               </Card.Title>
               <Card.ImgOverlay className="rightImageOverlay">
                 <Card.Title className="player2Name">{player2Name}</Card.Title>
@@ -293,10 +305,25 @@ function Versus() {
         </div>
         <div>
           <div className="scroll">
-            <div className="char-arrange"> {charArray.map(renderCard)} </div>
+            <div className="char-arrange">
+              {" "}
+              {charArray
+                .filter((renderCard) => {
+                  if (searchHero == "") {
+                    return renderCard;
+                  } else if (
+                    renderCard.name
+                      .toLowerCase()
+                      .includes(searchHero.toLowerCase())
+                  ) {
+                    return renderCard;
+                  }
+                })
+                .map(renderCard)}
+            </div>
           </div>
         </div>
-      </>
+      </div>
     </div>
   );
 }
