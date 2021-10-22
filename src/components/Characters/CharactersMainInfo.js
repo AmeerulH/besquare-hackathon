@@ -52,7 +52,7 @@ const CharactersMainInfo = (props) => {
   return (
     <div className="charactersMainInfo">
       <div className="charactersInfo">
-        <Container fluid="md">
+        <Container fluid="md" className="characterInfoContainer">
           <Row>
             <Container className="heroInfo">
               <span class="border tl"></span>
