@@ -1,0 +1,114 @@
+.features {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bangers", cursive;
+  font-family: "Bungee Inline", cursive;
+}
+
+.header1 {
+  width: auto;
+  height: auto;
+  color: #66fcf1;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vw;
+  padding-bottom: 20px;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+}
+
+.featureCards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.lists {
+  color: white;
+  background: none;
+  font-size: 2vw;
+}
+
+.vsImage {
+  width: 5vw;
+}
+
+.cardFeatures {
+  color: white;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 10px;
+  border-radius: 0.6rem;
+  border-color: #1f2833;
+  background-image: url("../../images/blue-abstract-rays-4k-blue-lines-creative-blue-abstract-backgrounds.jpg");
+  background-size: cover;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  margin: 0 10px;
+  object-fit: cover;
+  height: 40vh;
+  width: 30vw;
+}
+
+.CardTitle {
+  color: black;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vw;
+  text-shadow: 0 0 10px white, 0 0 10px white;
+}
+
+.cardFeatures:hover {
+  color: #66fcf1;
+}
+.lists:hover {
+  color: #66fcf1;
+}
+
+.CardText {
+  font-size: 2vw;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 480px) {
+  /* mobile devices */
+  .featureCards {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .cardFeatures {
+    margin: 10px 0;
+    height: 40vh;
+    width: 40vw;
+  }
+
+  .CardTitle {
+    font-size: 4vw;
+  }
+
+  .CardText {
+    font-size: 3vw;
+    padding: 0 10px;
+  }
+
+  .lists {
+    font-size: 3vw;
+  }
+  .header1 {
+    font-size: 10vw;
+    padding-bottom: 10px;
+  }
+}
+
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */

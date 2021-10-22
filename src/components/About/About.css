@@ -1,0 +1,56 @@
+.aboutContainer {
+  min-height: 100vh;
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", serif;
+  color: #000000;
+  /* color: #0b0c10;
+  color: #1F2833;
+  color:#C5C6C7;
+  color: #66FCF1;
+  color: #45A29E; */
+}
+
+.Para1 {
+  font-family: "Roboto", serif;
+  font-size: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b0c10;
+  padding: 0 20px 20px 20px;
+}
+
+.aboutHeader {
+  font-family: "Bungee Inline", cursive;
+  color: #1f2833;
+  font-size: 4vw;
+}
+
+.image {
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 50px;
+}
+
+.AboutBack {
+  background-image: url("../../AboutBack9.png");
+}
+
+.box {
+  margin: auto;
+  border-style: groove;
+  width: 80%;
+}
+
+.CTBRS {
+  font-family: "Bungee Inline", cursive;
+  font-size: 4vw;
+  color: #8080ff;
+}
+
+.namesHeader {
+  font-size: 2vw;
+}

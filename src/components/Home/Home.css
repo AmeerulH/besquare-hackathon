@@ -1,0 +1,85 @@
+.bgHome {
+  background-image: url(../../images/abcdef.jpg);
+  background-size: cover;
+  position: sticky;
+}
+
+.HeroDisplay {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  font-weight: bolder;
+  color: #66fcf1;
+}
+
+.HeroCards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.HeroDisplay > h1 {
+  font-size: 5vw;
+  color: #66fcf1;
+  text-shadow: 0 0 10px black, 0 0 10px black;
+  font-family: "Bangers", cursive;
+  font-family: "Bungee Inline", cursive;
+  font-size: 4vw;
+  background: none;
+}
+
+.heroCard {
+  margin: 0 10px;
+  border: none;
+  border-radius: 0.6rem;
+}
+
+.heroCard:hover {
+  transform: scale(1.05);
+  position: relative;
+  box-shadow: 0 10px 20px #66fcf1, 0 10px 20px #66fcf1;
+  text-shadow: 0 0 2px #66fcf1, 0 0 2px #66fcf1;
+}
+
+.character-names-home {
+  display: flex;
+  justify-content: center;
+  background: none;
+  color: black;
+  font-size: 2vw;
+  font-weight: bolder;
+  border-radius: 0.4rem;
+  padding: 5px 5px;
+  font-family: "Bangers", cursive;
+  font-family: "Bungee Inline", cursive;
+  text-shadow: 0 0 10px white, 0 0 10px white;
+}
+
+@media screen and (max-width: 480px) {
+  /* mobile devices */
+  .HeroCards {
+    grid-template-columns: auto;
+  }
+  .heroCard {
+    margin: 0 0 20px 0;
+  }
+  .character-names-home {
+    font-size: 5vw;
+  }
+
+  .HeroDisplay > h1 {
+    font-size: 9vw;
+    padding: 10px;
+  }
+}
+
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */
