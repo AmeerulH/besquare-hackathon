@@ -8,6 +8,8 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import SearchIcon from "@mui/icons-material/Search";
+import VS from "../../VS-img.png";
 
 function Versus() {
   let charArray = CharacterDetails();
@@ -73,6 +75,8 @@ function Versus() {
     }
   }
 
+  const [searchHero, setSearchHero] = useState("");
+
   const renderCard = (card, index) => {
     return (
       <Card
@@ -105,8 +109,17 @@ function Versus() {
 
   return (
     <div className="background">
-      <>
-        <div className="mid-section"></div>
+      <div className="versus-div">
+        <div className="mid-section">
+          <div className="search-bar-versus">
+            <SearchIcon fontSize="large" />
+            <input
+              type="text"
+              placeholder="Search for Hero.."
+              onChange={(event) => setSearchHero(event.target.value)}
+            />
+          </div>
+        </div>
 
         <div className="pick-hero">
           <div className="first-box">
@@ -198,10 +211,7 @@ function Versus() {
             </Card>
           </div>
           <div className="versus">
-            <img
-              className="versus-image"
-              src="https://i.pinimg.com/originals/06/1d/de/061dde1c16977f7d2ae3a2c6976e6a99.png"
-            />
+            <img className="versus-image" src={VS} />
           </div>
           <div className="second-box">
             <Card className="stats-right-hero1">
@@ -283,7 +293,7 @@ function Versus() {
             <Card className="right-hero">
               <Card.Img className="right-sp" variant="top" src={player2} />
               <Card.Title className="overall-pos2">
-                Overall: {player1Overall}
+                Overall: {player2Overall}
               </Card.Title>
               <Card.ImgOverlay className="rightImageOverlay">
                 <Card.Title className="player2Name">{player2Name}</Card.Title>
@@ -293,10 +303,25 @@ function Versus() {
         </div>
         <div>
           <div className="scroll">
-            <div className="char-arrange"> {charArray.map(renderCard)} </div>
+            <div className="char-arrange">
+              {" "}
+              {charArray
+                .filter((renderCard) => {
+                  if (searchHero == "") {
+                    return renderCard;
+                  } else if (
+                    renderCard.name
+                      .toLowerCase()
+                      .includes(searchHero.toLowerCase())
+                  ) {
+                    return renderCard;
+                  }
+                })
+                .map(renderCard)}
+            </div>
           </div>
         </div>
-      </>
+      </div>
     </div>
   );
 }
