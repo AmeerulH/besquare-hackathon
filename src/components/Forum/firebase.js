@@ -28,13 +28,23 @@ const firebaseConfig = {
   // appId: "1:788590550442:web:52cdc25272834724a49fd3",
   // measurementId: "G-K4K5Y5SQVQ",
 
-  apiKey: "AIzaSyBuOUk49h5q-tSNRacCN3kgGYCOndPOueM",
-  authDomain: "hackathon-6811b.firebaseapp.com",
-  projectId: "hackathon-6811b",
-  storageBucket: "hackathon-6811b.appspot.com",
-  messagingSenderId: "360048715094",
-  appId: "1:360048715094:web:23f3e1cc4fc7c8efb222f7",
-  measurementId: "G-JWN716QP8F",
+  //db3
+
+  // apiKey: "AIzaSyBuOUk49h5q-tSNRacCN3kgGYCOndPOueM",
+  // authDomain: "hackathon-6811b.firebaseapp.com",
+  // projectId: "hackathon-6811b",
+  // storageBucket: "hackathon-6811b.appspot.com",
+  // messagingSenderId: "360048715094",
+  // appId: "1:360048715094:web:23f3e1cc4fc7c8efb222f7",
+  // measurementId: "G-JWN716QP8F",
+
+  apiKey: "AIzaSyAf7G_tPcNh5ImK23LDA-Tt1nHDMCw2KH8",
+  authDomain: "hackathon2-eabce.firebaseapp.com",
+  projectId: "hackathon2-eabce",
+  storageBucket: "hackathon2-eabce.appspot.com",
+  messagingSenderId: "244468279926",
+  appId: "1:244468279926:web:7e30a37622750bd7020d57",
+  measurementId: "G-FGP4EFVYFF",
 };
 
 // Initialize Firebase
