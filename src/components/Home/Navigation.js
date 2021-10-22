@@ -12,10 +12,10 @@ import "./Navigation.css";
 const Navigation = () => {
   return (
     <>
-      <Navbar className="main-nav">
+      <Navbar className="main-nav" variant="dark">
         <Container>
           <Navbar.Brand
-            style={{ fontWeight: "bold", color: "#66fcf1" }}
+            style={{ fontWeight: "bold", color: "#66fcf1", fontSize: "2.5vw" }}
             as={Link}
             to="/"
           >
