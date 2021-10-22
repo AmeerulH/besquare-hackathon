@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Img } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "./Versus.css";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
@@ -211,7 +211,7 @@ function Versus() {
             </Card>
           </div>
           <div className="versus">
-            <img className="versus-image" src={VS} />
+            <img className="versus-image" alt="versus" src={VS} />
           </div>
           <div className="second-box">
             <Card className="stats-right-hero1">
@@ -307,7 +307,7 @@ function Versus() {
               {" "}
               {charArray
                 .filter((renderCard) => {
-                  if (searchHero == "") {
+                  if (searchHero === "") {
                     return renderCard;
                   } else if (
                     renderCard.name
@@ -316,6 +316,7 @@ function Versus() {
                   ) {
                     return renderCard;
                   }
+                  return 0;
                 })
                 .map(renderCard)}
             </div>

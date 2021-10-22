@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import { Switch, Route, Link } from "react-router-dom";
 import Characters from "../Characters/Characters";
 import Versus from "../Versus/Versus";

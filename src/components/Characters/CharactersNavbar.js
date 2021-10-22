@@ -1,12 +1,6 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import {
-  Navbar,
-  Container,
-  Nav,
-  NavDropdown,
-  NavbarBrandProps,
-} from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
 import CharactersPower from "./CharactersPower";
 import CharactersBio from "./CharactersBio";

@@ -1,7 +1,6 @@
 import React from "react";
 import "./About.css";
 import logo from "../../AL.png";
-import { Col, Container, Row } from "react-bootstrap";
 
 const About = () => {
   return (

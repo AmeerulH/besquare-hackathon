@@ -4,7 +4,6 @@ import "./Characters.css";
 import { useHistory } from "react-router-dom";
 import { CharacterDetails } from "../../service/CharacterDetails";
 import { useState, useEffect } from "react";
-import SearchIcon from "@mui/icons-material/Search";
 import text from "../../text-test1.png";
 
 function Characters() {
@@ -108,7 +107,7 @@ function Characters() {
       <div className="background-image">
         <div className="charactersDiv">
           <div className="characters-header">
-            <img className="charImg" src={text} />
+            <img className="charImg" alt="characterImage" src={text} />
           </div>
           <div className="filter">
             <span className="filter-word">FILTER HEROES</span>
@@ -208,7 +207,7 @@ function Characters() {
             <div className="grid-box">
               {charArray
                 .filter((renderCard) => {
-                  if (searchHero == "") {
+                  if (searchHero === "") {
                     return renderCard;
                   } else if (
                     renderCard.name
@@ -217,6 +216,7 @@ function Characters() {
                   ) {
                     return renderCard;
                   }
+                  return 0;
                 })
                 .map(renderCard)}
             </div>

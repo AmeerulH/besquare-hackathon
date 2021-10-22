@@ -9,16 +9,11 @@ import "aos/dist/aos.css";
 import "./Characters.css";
 
 import {
-  CircularProgressbar,
   CircularProgressbarWithChildren,
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import VisibilitySensor from "react-visibility-sensor";
-
-import ProgressProvider from "./ProgressProvider";
 import AnimatedProgressProvider from "./AnimatedProgressProvider";
-import ChangingProgressProvider from "./ChangingProgressProvider";
 import { easeQuadInOut } from "d3-ease";
 
 const CharactersMainInfo = (props) => {

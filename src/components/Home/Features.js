@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
+import { Card, ListGroup } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Image from "../../images/marveldc.jpg";
 import "./Features.css";
 import { Link } from "react-router-dom";
 
