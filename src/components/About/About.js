@@ -14,7 +14,7 @@ const About = () => {
           <div class="box">
             <h1 className="aboutHeader">About Us</h1>
             <div className="Para1">
-              We are 'Sausage party'. We built this webiste as we wanted to get
+              We are 'Sausage party'. We built this website as we wanted to get
               others to discuss: who is the best character? We all come from
               humble beginnings, and wish to share our knowledge and passion
               when it comes to superheros/villains.
