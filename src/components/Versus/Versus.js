@@ -9,6 +9,7 @@ import {
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import SearchIcon from "@mui/icons-material/Search";
+import VS from "../../VS-img.png";
 
 function Versus() {
   let charArray = CharacterDetails();
@@ -131,7 +132,7 @@ function Versus() {
                 <Card.Title className="player1Name">{player1Name}</Card.Title>
               </Card.ImgOverlay>
             </Card>
-            <Card className="stats-left-hero1" style={{ width: 140 }}>
+            <Card className="stats-left-hero1">
               <CircularProgressbarWithChildren
                 value={player1Stats}
                 styles={buildStyles({
@@ -170,7 +171,7 @@ function Versus() {
                 </div>
               </CircularProgressbarWithChildren>
             </Card>
-            <Card className="stats-left-hero2" style={{ width: 140 }}>
+            <Card className="stats-left-hero2">
               <CircularProgressbarWithChildren
                 value={player1Speed}
                 styles={buildStyles({
@@ -210,13 +211,10 @@ function Versus() {
             </Card>
           </div>
           <div className="versus">
-            <img
-              className="versus-image"
-              src="https://i.pinimg.com/originals/06/1d/de/061dde1c16977f7d2ae3a2c6976e6a99.png"
-            />
+            <img className="versus-image" src={VS} />
           </div>
           <div className="second-box">
-            <Card className="stats-right-hero1" style={{ width: 140 }}>
+            <Card className="stats-right-hero1">
               <CircularProgressbarWithChildren
                 value={player2Stats}
                 styles={buildStyles({
@@ -254,7 +252,7 @@ function Versus() {
                 </div>
               </CircularProgressbarWithChildren>
             </Card>
-            <Card className="stats-right-hero2" style={{ width: 140 }}>
+            <Card className="stats-right-hero2">
               <CircularProgressbarWithChildren
                 value={player2Speed}
                 styles={buildStyles({

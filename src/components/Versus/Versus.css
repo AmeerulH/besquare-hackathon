@@ -32,11 +32,6 @@
   font-family: "Bungee Inline", cursive;
 }
 
-.top-section {
-  padding: 1vh;
-  font-size: 50px;
-}
-
 .pick-hero {
   display: flex;
   justify-content: space-between;
@@ -90,8 +85,8 @@
 }
 
 .stats-left-hero1 {
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
   font-size: 1vw;
   padding: 50px 0 150px 0;
   color: white;
@@ -102,8 +97,8 @@
 }
 
 .stats-left-hero2 {
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
   font-size: 1vw;
   padding: 50px 0 100px 0;
   color: white;
@@ -114,8 +109,8 @@
 }
 
 .stats-right-hero1 {
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
   font-size: 1vw;
   padding: 50px 0 100px 0;
   color: white;
@@ -126,8 +121,8 @@
 }
 
 .stats-right-hero2 {
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
   font-size: 1vw;
   padding: 50px 0 100px 0;
   color: white;
@@ -166,8 +161,9 @@
 }
 
 .versus-image {
-  width: 400px;
-  height: 500px;
+  margin-top: 10vh;
+  width: 50%;
+  height: 50%;
 }
 
 .overall-pos1 {
@@ -206,4 +202,107 @@
   border-radius: 5px;
   width: 13.5vw;
   height: 4vh;
+}
+
+@media screen and (max-width: 480px) {
+  .char-arrange {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    border-radius: 0.7rem;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  .left-hero {
+    width: 100px;
+    height: 120px;
+    margin: 40px 5px 65px 5px;
+    border-radius: 1rem;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+  .left-sp {
+    width: 100px;
+    height: 120px;
+    border-radius: 1rem;
+    box-shadow: 2px 3px 5px 1px;
+  }
+  .stats-left-hero1 {
+    height: 30px;
+    width: 30px;
+    font-size: 1vw;
+    padding: 50px 0 150px 0;
+    color: white;
+    border: none;
+    background: none;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    font-family: "Bangers", cursive;
+  }
+
+  .stats-left-hero2 {
+    height: 30px;
+    width: 30px;
+    font-size: 1vw;
+    padding: 50px 0 100px 0;
+    color: white;
+    border: none;
+    background: none;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    font-family: "Bangers", cursive;
+  }
+
+  .stats-right-hero1 {
+    height: 30px;
+    width: 30px;
+    font-size: 1vw;
+    padding: 50px 0 100px 0;
+    color: white;
+    border: none;
+    background: none;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    font-family: "Bangers", cursive;
+  }
+
+  .stats-right-hero2 {
+    height: 30px;
+    width: 30px;
+    font-size: 1vw;
+    padding: 50px 0 100px 0;
+    color: white;
+    border: none;
+    background: none;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    font-family: "Bangers", cursive;
+  }
+  .versus-image {
+    margin-top: 8vh;
+    width: 30px;
+    height: 30px;
+  }
+  .right-hero {
+    width: 100px;
+    height: 120px;
+    margin: 40px 5px 65px 5px;
+    border-radius: 1rem;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+
+  .right-sp {
+    width: 100px;
+    height: 120px;
+    border-radius: 1rem;
+    box-shadow: 2px 3px 5px 1px;
+  }
+  .versus-div {
+    width: 100vw;
+  }
+  .search-bar-versus {
+    background-color: rgb(0, 0, 0, 0.6);
+    padding-top: 3px;
+    border-radius: 5px;
+    width: 60vw;
+    height: 5vh;
+  }
 }
