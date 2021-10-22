@@ -8,8 +8,8 @@ const User = ({ user }) => {
   return (
     <>
       <div className="usercomments-box">
-        <h3>@{user.Name}</h3>
-        <p>{user.Comment}</p>
+        <h3 id="name">@{user.Name}</h3>
+        <p id="comment">{user.Comment}</p>
         <p id="date">{humanDateFormat}</p>
       </div>
     </>

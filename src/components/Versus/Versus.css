@@ -27,12 +27,9 @@
 .character-names-versus {
   display: none;
   color: white;
-  font-size: 15px;
-}
-
-.top-section {
-  padding: 1vh;
-  font-size: 50px;
+  font-size: 14px;
+  font-family: "Bangers", cursive;
+  font-family: "Bungee Inline", cursive;
 }
 
 .pick-hero {
@@ -43,9 +40,9 @@
 .left-hero {
   width: 400px;
   height: 450px;
-  margin: 80px 80px 30px 30px;
+  margin: 40px 40px 65px 15px;
   border-radius: 1rem;
-  background-color: red;
+  background-color: rgb(0, 0, 0, 0.5);
 }
 
 .left-sp {
@@ -58,8 +55,9 @@
 .right-hero {
   width: 400px;
   height: 450px;
-  margin: 80px 80px;
+  margin: 40px 15px 65px 30px;
   border-radius: 1rem;
+  background-color: rgb(0, 0, 0, 0.5);
 }
 
 .right-sp {
@@ -87,10 +85,10 @@
 }
 
 .stats-left-hero1 {
-  height: 120px;
-  width: 120px;
-  font-size: 0.8vw;
-  padding: 100px 0 150px 0;
+  height: 140px;
+  width: 140px;
+  font-size: 1vw;
+  padding: 50px 0 150px 0;
   color: white;
   border: none;
   background: none;
@@ -99,10 +97,10 @@
 }
 
 .stats-left-hero2 {
-  height: 120px;
-  width: 120px;
-  font-size: 0.8vw;
-  padding: 100px 0 100px 0;
+  height: 140px;
+  width: 140px;
+  font-size: 1vw;
+  padding: 50px 0 100px 0;
   color: white;
   border: none;
   background: none;
@@ -111,10 +109,10 @@
 }
 
 .stats-right-hero1 {
-  height: 120px;
-  width: 120px;
-  font-size: 0.8vw;
-  padding: 100px 0 100px 0;
+  height: 140px;
+  width: 140px;
+  font-size: 1vw;
+  padding: 50px 0 100px 0;
   color: white;
   border: none;
   background: none;
@@ -123,10 +121,10 @@
 }
 
 .stats-right-hero2 {
-  height: 120px;
-  width: 120px;
-  font-size: 0.8vw;
-  padding: 100px 0 100px 0;
+  height: 140px;
+  width: 140px;
+  font-size: 1vw;
+  padding: 50px 0 100px 0;
   color: white;
   border: none;
   background: none;
@@ -163,12 +161,13 @@
 }
 
 .versus-image {
-  width: 400px;
-  height: 400px;
+  margin-top: 10vh;
+  width: 50%;
+  height: 50%;
 }
 
 .overall-pos1 {
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: 2vw;
   color: white;
   text-shadow: 0 0 10px black, 0 0 10px black;
@@ -176,7 +175,7 @@
 }
 
 .overall-pos2 {
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: 2vw;
   color: white;
   text-shadow: 0 0 10px black, 0 0 10px black;
@@ -187,4 +186,123 @@
   background-image: url("https://cutewallpaper.org/21/fire-background-gif/Fire-Fighting-GIF-Find-Share-on-GIPHY.gif");
   background-size: cover;
   position: sticky;
+}
+
+.mid-section {
+  color: white;
+  padding-top: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar-versus {
+  background-color: rgb(0, 0, 0, 0.6);
+  padding-top: 3px;
+  border-radius: 5px;
+  width: 13.5vw;
+  height: 4vh;
+}
+
+@media screen and (max-width: 480px) {
+  .char-arrange {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    border-radius: 0.7rem;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  .left-hero {
+    width: 100px;
+    height: 120px;
+    margin: 40px 5px 65px 5px;
+    border-radius: 1rem;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+  .left-sp {
+    width: 100px;
+    height: 120px;
+    border-radius: 1rem;
+    box-shadow: 2px 3px 5px 1px;
+  }
+  .stats-left-hero1 {
+    height: 30px;
+    width: 30px;
+    font-size: 1vw;
+    padding: 50px 0 150px 0;
+    color: white;
+    border: none;
+    background: none;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    font-family: "Bangers", cursive;
+  }
+
+  .stats-left-hero2 {
+    height: 30px;
+    width: 30px;
+    font-size: 1vw;
+    padding: 50px 0 100px 0;
+    color: white;
+    border: none;
+    background: none;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    font-family: "Bangers", cursive;
+  }
+
+  .stats-right-hero1 {
+    height: 30px;
+    width: 30px;
+    font-size: 1vw;
+    padding: 50px 0 100px 0;
+    color: white;
+    border: none;
+    background: none;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    font-family: "Bangers", cursive;
+  }
+
+  .stats-right-hero2 {
+    height: 30px;
+    width: 30px;
+    font-size: 1vw;
+    padding: 50px 0 100px 0;
+    color: white;
+    border: none;
+    background: none;
+    text-shadow: 0 0 10px black, 0 0 10px black;
+    font-family: "Bangers", cursive;
+  }
+  .versus-image {
+    margin-top: 8vh;
+    width: 30px;
+    height: 30px;
+  }
+  .right-hero {
+    width: 100px;
+    height: 120px;
+    margin: 40px 5px 65px 5px;
+    border-radius: 1rem;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+
+  .right-sp {
+    width: 100px;
+    height: 120px;
+    border-radius: 1rem;
+    box-shadow: 2px 3px 5px 1px;
+  }
+  .versus-div {
+    width: 100vw;
+  }
+  .search-bar-versus {
+    background-color: rgb(0, 0, 0, 0.6);
+    padding-top: 3px;
+    border-radius: 5px;
+    width: 60vw;
+    height: 5vh;
+  }
 }

@@ -88,10 +88,10 @@ function Characters() {
   const renderCard = (card, index) => {
     return (
       <Card
+        style={{ width: "10rem" }}
         className="box"
         id="scale"
         border="dark"
-        style={{ width: "10rem" }}
         key={index}
         onClick={() => getCharacterDetails(card)}
       >
@@ -108,11 +108,11 @@ function Characters() {
       <div className="background-image">
         <div className="charactersDiv">
           <div className="characters-header">
-            <img src={text} />
+            <img className="charImg" src={text} />
           </div>
           <div className="filter">
             <span className="filter-word">FILTER HEROES</span>
-            <span className="dropdown">
+            <span className="dropdownToggle">
               <Dropdown>
                 <Dropdown.Toggle
                   size="md"
@@ -138,7 +138,7 @@ function Characters() {
                 </Dropdown.Menu>
               </Dropdown>
             </span>
-            <span>
+            <span className="dropdownToggle">
               <Dropdown>
                 <Dropdown.Toggle
                   size="md"
@@ -170,7 +170,7 @@ function Characters() {
                 </Dropdown.Menu>
               </Dropdown>
             </span>
-            <span>
+            <span className="dropdownToggle">
               <Dropdown>
                 <Dropdown.Toggle
                   size="md"
@@ -197,10 +197,12 @@ function Characters() {
               </Dropdown>
             </span>
             <span className="search-bar">
-              <SearchIcon fontSize="large" />
+              <SearchIcon
+                fontSize="large"
+                style={{ color: "black", position: "absolute" }}
+              />
               <input
                 type="text"
-                placeholder="Search for Hero.."
                 onChange={(event) => setSearchHero(event.target.value)}
               />
             </span>
