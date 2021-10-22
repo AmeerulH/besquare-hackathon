@@ -8,15 +8,15 @@ import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   // First db
 
-  // apiKey: "AIzaSyCEPlovccCgKwUL56hC_ACrtHYrPJ6GIuY",
-  // authDomain: "user-comments-97564.firebaseapp.com",
-  // databaseURL:
-  //   "https://user-comments-97564-default-rtdb.asia-southeast1.firebasedatabase.app",
-  // projectId: "user-comments-97564",
-  // storageBucket: "user-comments-97564.appspot.com",
-  // messagingSenderId: "878695487182",
-  // appId: "1:878695487182:web:75d7361a1584711c85229f",
-  // measurementId: "G-3CDPBYM771",
+  apiKey: "AIzaSyCEPlovccCgKwUL56hC_ACrtHYrPJ6GIuY",
+  authDomain: "user-comments-97564.firebaseapp.com",
+  databaseURL:
+    "https://user-comments-97564-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "user-comments-97564",
+  storageBucket: "user-comments-97564.appspot.com",
+  messagingSenderId: "878695487182",
+  appId: "1:878695487182:web:75d7361a1584711c85229f",
+  measurementId: "G-3CDPBYM771",
 
   //2nd db
 
@@ -38,13 +38,15 @@ const firebaseConfig = {
   // appId: "1:360048715094:web:23f3e1cc4fc7c8efb222f7",
   // measurementId: "G-JWN716QP8F",
 
-  apiKey: "AIzaSyAf7G_tPcNh5ImK23LDA-Tt1nHDMCw2KH8",
-  authDomain: "hackathon2-eabce.firebaseapp.com",
-  projectId: "hackathon2-eabce",
-  storageBucket: "hackathon2-eabce.appspot.com",
-  messagingSenderId: "244468279926",
-  appId: "1:244468279926:web:7e30a37622750bd7020d57",
-  measurementId: "G-FGP4EFVYFF",
+  //db 4
+
+  // apiKey: "AIzaSyAf7G_tPcNh5ImK23LDA-Tt1nHDMCw2KH8",
+  // authDomain: "hackathon2-eabce.firebaseapp.com",
+  // projectId: "hackathon2-eabce",
+  // storageBucket: "hackathon2-eabce.appspot.com",
+  // messagingSenderId: "244468279926",
+  // appId: "1:244468279926:web:7e30a37622750bd7020d57",
+  // measurementId: "G-FGP4EFVYFF",
 };
 
 // Initialize Firebase
