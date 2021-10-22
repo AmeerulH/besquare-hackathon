@@ -7,7 +7,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(40px + 2vmin);
 }
 
 .maintext {
@@ -38,5 +37,12 @@
   }
   to {
     transform: translateY(-20%);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* mobile devices */
+  .maintext {
+    font-size: 9vw;
   }
 }
