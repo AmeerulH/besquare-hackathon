@@ -1,7 +1,8 @@
 .bg {
   background-image: url("./Media/bgf.gif");
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .comment-box {
@@ -12,7 +13,7 @@
   margin-left: 10%;
   transition: 0.3s;
   /* display: inline-flex; */
-  padding: 100px;
+  padding: 2rem;
   align-items: center;
   justify-content: center;
   opacity: 0.8;
@@ -48,15 +49,40 @@
   justify-content: center;
   display: inline-flex;
   border-radius: 25px;
+  text-align: center;
 }
 
-.username {
+.namein {
   align-items: center;
   justify-content: center;
   display: inline-flex;
   text-align: center;
   border-radius: 25px;
-  width: fit-content;
+  width: 15rem;
+}
+
+@media screen and (max-width: 600px) and (min-width: 300px) {
+  .namein {
+    width: 10rem;
+  }
+
+  #incomment {
+    text-align: center;
+  }
+
+  #commentbtn {
+    width: 5rem;
+  }
+}
+
+@media screen and (max-width: 300px) and (min-width: 0px) {
+  .namein {
+    width: 6rem;
+  }
+  #commentbtn {
+    width: 2rem;
+    text-size-adjust: 2rem;
+  }
 }
 
 #commentbtn {
@@ -70,7 +96,6 @@
   margin-left: 10%;
   transition: 0.3s;
   color: #45a29e;
-  /* display: flex; */
   margin-top: 50px;
   margin-bottom: 50px;
   padding: 20px;
@@ -90,6 +115,15 @@
   text-shadow: 0 0 5px #66fcf1;
 }
 
+#name {
+  font-size: 2vw;
+}
+
+#comment {
+  font-size: 1.5vw;
+}
+
 #date {
-  margin-left: 80%;
+  margin-left: 78%;
+  font-size: 1vw;
 }
