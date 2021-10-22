@@ -22,9 +22,8 @@ export const AddComment = () => {
         <form onSubmit={handleSubmit} />
         <div className="">
           <input
-            className="username"
+            className="namein"
             type="text"
-            required
             placeholder="Your Name"
             value={Name}
             onChange={(e) => setName(e.target.value)}
@@ -33,7 +32,7 @@ export const AddComment = () => {
 
         <div className="input-comment">
           <textarea
-            className="form-control"
+            className="commentin"
             id="incomment"
             rows="4"
             placeholder="Share your thoughts here..."
@@ -44,6 +43,7 @@ export const AddComment = () => {
 
         <div>
           <button
+            id="clickin"
             disabled={!(Name, Comment)}
             onClick={handleSubmit}
             type="button"
