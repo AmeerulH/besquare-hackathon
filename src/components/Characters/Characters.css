@@ -145,15 +145,14 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 
-.heroInfo {
+/* .heroInfo {
   margin-top: 5rem;
-  margin-left: 100px;
   color: black;
   border: 1px solid black;
   background-image: url(https://wallpaperaccess.com/full/876546.jpg);
   width: 50vw;
   height: fit-content;
-}
+} */
 
 .heroName {
   font-size: 2.5rem;
@@ -208,6 +207,9 @@
   max-width: fit-content;
   width: 500%;
   margin: 100px auto 0;
+  margin-top: 5rem;
+  background-image: url(https://wallpaperaccess.com/full/876546.jpg);
+  height: fit-content;
 
   font-family: "Bangers", cursive;
   font-size: 17px;
@@ -322,7 +324,7 @@
   border: solid 3px #6e7491;
   max-width: 1250px;
   width: 100%;
-  margin: 100px auto 0;
+
   background-color: white;
 
   font-family: "Bangers", cursive;
@@ -709,4 +711,99 @@
 .br:after {
   right: -10px;
   top: -80px;
+}
+
+@media screen and (max-width: 1024px) {
+  .heroInfo {
+    width: 500%;
+    font-size: 20px;
+    margin: 20px 20px 0 20px;
+    max-width: 900px;
+  }
+
+  .heroImage {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroInfo {
+    width: 500%;
+    font-size: 20px;
+    margin: 20px 20px 0 20px;
+    max-width: 650px;
+  }
+
+  .heroImage {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .heroInfo {
+    width: 80%;
+    font-size: 20px;
+    margin: 20px 20px 0 20px;
+  }
+
+  .heroImage {
+    width: 200px;
+  }
+
+  .powerInfo {
+    width: 80%;
+    height: 1300px;
+  }
+
+  .circularProgressbar {
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .heroInfo {
+    width: 90%;
+    font-size: 20px;
+    margin: 20px 20px 0 20px;
+  }
+
+  .heroImage {
+    width: 200px;
+  }
+
+  .powerInfo {
+    width: 90%;
+    height: 1300px;
+  }
+
+  .circularProgressbar {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .heroInfo {
+    width: 70%;
+    font-size: 20px;
+    margin: 20px 20px 0 20px;
+  }
+
+  .heroImage {
+    width: 130%;
+    height: auto;
+  }
+
+  .powerInfo {
+    width: 70%;
+    height: 1300px;
+  }
+
+  .circularProgressbar {
+    width: 200px;
+    height: 200px;
+    margin-left: 40px;
+  }
 }
